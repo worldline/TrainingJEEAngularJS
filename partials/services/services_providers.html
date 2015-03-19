@@ -1,0 +1,14 @@
+
+	<div class="bloc-content text-content">
+		<ul>
+			<li>Services DI works as followed:</li>
+			<ol>
+				<li>A controller/directive/service/etc. need a service named <i>UserService</i>...</li>
+				<li>Angular will search for the provider called <i>UserServiceProvider</i> in the provider cache...</li>
+				<li>It calls its method <i>$get</i> to create <i>UserService</i> instance...</li>
+				<li>And stores it in the services cache, for further use (services are singletons).</li>
+			</ol>
+			<li>There are several types of services, and most of time, you will not define a <em>provider</em> for your service. In such a case, it will be created under the hood by Angular.</li>
+			<li>Providers have the same name than the services prefixed by <em>Provider</em>, and it is usefull when you need to configure your service...</li>
+		</ul>
+	<p contenteditable></p></div>

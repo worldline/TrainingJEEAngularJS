@@ -1,0 +1,30 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Restricts the directive to a specific directive declaration style. 
+			If omitted directives are allowed on <span class="text-red">attributes only</span>.</li>
+		<ul style="font-size: 22px">
+			<li><span class="text-red">E</span> (Element name): <i>&lt;my-directive&gt;&lt;/my-directive&gt;</i></li>
+			<li><span class="text-red">A</span> (Attribute): <i>&lt;div my-directive="exp"&gt;&lt;/div&gt;</i></li>
+			<li><span class="text-red">C</span> (Class): <i>&lt;div class="my-directive: exp;"&gt;&lt;/div&gt;</i></li>
+			<li><span class="text-red">M</span> (Comment): <i>&lt;!-- directive:my-directive exp --&gt;</i></li>
+		</ul>
+	</ul>
+		
+<editor editor-options="{showPreview:false , showTabs:true , height:130, jsFiddle:true, module:'app'}" >
+	<file type="javascript" name="rating.js">angular.module('app',[])
+.directive('starRating', function () {
+    return {
+		restrict: 'A, E',
+		link: function (scope, elem, attrs) {
+			console.log("Directive declaration style is OK!");
+		}
+    };
+});
+</file>
+<file type="html" name="rating.html">&lt;span star-rating&gt;Let's create a directive!&lt;/span&gt;
+
+&lt;!-- Which other notation can you use? --&gt;
+</file>
+</editor>
+
+<p contenteditable></p></div>

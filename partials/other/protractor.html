@@ -1,0 +1,43 @@
+<div class="bloc-content text-content">
+    <ul>
+        <li><a href="https://github.com/angular/protractor" target=”_blank”>Protractor</a> is the E2E framework test for Angular</li>
+        <li>Built on WebdriverJS aka Selenium Server</li>
+        <li>Allows running tests targeting remote addresses</li>
+        <li>Has it's own runner, no need for Karma</li>
+    </ul>
+    <h4>Getting started</h4>
+
+    <editor editor-options="{showPreview:false , showTabs:false , compileCode:false , height:100,theme:'terminal'}">
+        <file type="sh" name="terminal">
+&gt; # 1)  INSTALL PROTRACTOR IN LOCAL MODULES
+&gt; npm install protractor #local install
+&gt; # 2) JUST DOWNLOAD SELENIUM SERVER LOCALLY
+&gt; node_modules/protractor/bin/webdriver-manager update
+&gt; # 3) FOR OUR PRACTICAL WORKS ONLY, MAKE THE STANDALONE AVAILABLE IN THE config/scripts FOLDER
+&gt; mkdir config/scripts && cp -r node_modules/protractor/selenium/* config/scripts/ /scripts/</file>
+    </editor>
+
+
+    <ul>
+        <li>
+        For PW, <code>grunt test:e2e</code> should be enough, be sure that your node server is started
+        </li>
+    </ul>
+
+
+<!--
+    <ul>
+        <li>
+        For practical works purpose, if step2 fail, then donwload 
+        <a href="http://selenium-release.storage.googleapis.com/2.40/selenium-server-standalone-2.40.0.jar" target=”_blank”>selenium server</a>,  
+        the chrome browser driver at : <a href="https://chromedriver.storage.googleapis.com/2.0/chromedriver_win32.zip" target=”_blank”>chromedriver_win32.zip</a> and place them into the config/scripts folder, then unzip chromedriver...
+        </li>
+    </ul>
+
+    <ul><li>The update may fail behind proxy for now. In that case please download : </li>
+        <ul> 
+            <li>A Browser Driver at : <a href="https://chromedriver.storage.googleapis.com/2.0/chromedriver_win32.zip" target=”_blank”>chromedriver_win32.zip</a></li>
+        </ul>
+    </ul>
+-->
+<p contenteditable></p></div>

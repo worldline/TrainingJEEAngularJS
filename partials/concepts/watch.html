@@ -1,0 +1,22 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li><span class="text-red">$scope.$watch</span>:</li>
+		<ul>
+			<li>Offers you to call a function when a value attached to the $scope has changed.</li>
+			<li>Watched expression is called on every call to <span class="text-red">$digest</span>, and compared with previous value.</li>
+		</ul>
+	</ul>
+			
+<editor editor-options="{showPreview:true , showTabs:true , height:160 }">
+	<file type="javascript" name="watch-ctrl.js">var WatchCtrl = function($scope) {
+	//newValue and oldValue parameters are optionnal.
+	$scope.$watch('myValue', function(newValue, oldValue) {
+		$scope.logText = "Old value : " + oldValue;
+	});
+};</file>
+    <file type="html" name="watch.html">&lt;div ng-controller="WatchCtrl"&gt;
+	&lt;input type="text" ng-model="myValue"/&gt; {{logText}}
+&lt;/div&gt;</file>
+</editor>
+
+<p contenteditable></p></div>

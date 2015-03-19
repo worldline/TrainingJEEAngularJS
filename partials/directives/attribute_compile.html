@@ -1,0 +1,48 @@
+<div class="bloc-content text-content">
+	<ul class="small">
+        <li>Used to <span class="text-red">transform the template DOM</span> before it is compiled.</li>
+        <li>Can have optional following parameters (identified by their order):</li>
+		<ol>
+			<li><i class="text-red">element</i>: Template element.</li>
+			<li><i class="text-red">attrs</i>: Template attributes.</li>
+			<li><i class="text-red">transclude</i>: Transclude function.</li>
+		</ol>
+		<li>
+			The <em>link</em> attribute is ignored as soon as the <em>compile</em> function is defined, 
+			but <em>compile</em> can return <em>link</em> if needed
+		</li>
+	</ul>
+		
+<editor editor-options="{showPreview:false , showTabs:true , height:280, jsFiddle:true, module:'app' }">
+<file type="javascript" name="sdcoRepeat.js">angular.module('app',[])
+.directive('sdcoRepeat', function() {
+	return {
+		compile: function(element, attr) {
+			var parent = element.parent();
+			element.removeAttr('sdco-repeat');
+			for (var index = 0; index &lt; (attr.sdcoRepeat - 1); index++) {
+				var clone = element.clone();
+				parent.append(clone);
+			}
+		}
+	};
+});
+</file>
+<file type="html" name="directive.html">&lt;div ng-controller="CompileTestCtrl"&gt;
+	&lt;button ng-class="buttonClass" ng-click="clickHandler()" sdco-repeat="10"&gt;
+		Click Me
+	&lt;/button&gt;
+&lt;/div&gt;
+</file>
+<file type="javascript" name="CompileTestCtrl.js">var CompileTestCtrl = function($scope, $window) {
+	
+	$scope.buttonClass = "btn btnSmall";
+	
+	$scope.clickHandler = function() {
+		$window.alert('ng-click is working.');
+	};
+};
+</file>
+</editor>
+		
+<p contenteditable></p></div>

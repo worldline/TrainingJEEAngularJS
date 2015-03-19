@@ -1,0 +1,58 @@
+<div ng-controller="WatchExCtrl">
+	<div class="bloc-content text-content">
+		<ul>
+			<li><span class="text-red">Exercise</span>: Complete the template and the controller to link the form 
+				elements to the scope data.</li>
+			<li>Displays an error message if one or more form fields are empty.</li>
+		</ul>
+			
+<editor editor-options="{showPreview:true , showTabs:true , height:200 }">
+<file type="html" name="product.html">&lt;div ng-controller="ProductController" id="productForm"&gt;
+	Name *: &lt;input type="text" id="inputName" /&gt;,
+	Price *: &lt;input type="number" id="inputPrice" /&gt; &euro;,
+	Quantity *: &lt;input type="number" id="inputQty" /&gt;
+	&lt;br/&gt; &lt;i id="errorMsg"&gt;{{mandatoryMsg}}&lt;/i&gt;
+&lt;/div&gt;
+
+</file>
+<file type="javascript" name="productController.js">var ProductController = function($scope) {
+	
+	$scope.product = { name: null, price: null, qty: null };
+	
+	$scope.mandatoryMsg = "All fields are mandatory!";
+};
+</file>
+</editor>
+        <p contenteditable></p>
+	</div>
+	
+	<button-valid/>
+	
+	<!-- 
+
+<div ng-controller="ProductController" id="productForm">
+	Name *: <input type="text" id="inputName" ng-model="product.name" />,
+	Price *: <input type="number" id="inputPrice" ng-model="product.price" /> €,
+	Quantity *: <input type="number" id="inputQty" ng-model="product.qty" />
+	<br/> <i id="errorMsg">{{mandatoryMsg}}</i>
+</div>
+
+	
+var ProductController = function($scope) {
+	
+	$scope.product = { name: null, price: null, qty: null };
+	
+	$scope.$watch('product', function(newValue, oldValue){
+	    var name= newValue.name, price= newValue.price, qty= newValue.qty;
+	    if ( (!name || name=='') &&  (!price || price=='') && (!qty || qty=='') ){
+	        $scope.mandatoryMsg = "All fields are mandatory!";
+	    }else{
+	        $scope.mandatoryMsg = '';
+	    }
+	}, true);
+	
+	$scope.mandatoryMsg = "All fields are mandatory!";
+};
+	 -->
+	
+</div>

@@ -1,0 +1,24 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li><span class="text-red">Removes</span> a portion of the DOM tree conditionally.</li>
+	</ul>
+		
+<editor editor-options="{showPreview:true , showTabs:false , height:270 }">
+<file type="html" name="http.html">&lt;div ng-init="bRemoveDiv = true"&gt;
+	&lt;button class="btn" ng-click="bRemoveDiv = !bRemoveDiv"&gt;
+		Show/Remove
+	&lt;/button&gt;
+	&lt;div ng-if="bRemoveDiv"&gt;
+		I'm visible because &lt;i&gt;bRemoveDiv&lt;/i&gt; is {{bRemoveDiv}}.
+	&lt;/div&gt;
+&lt;/div&gt;
+</file>
+</editor>
+
+<ul>
+		<li>
+ng-if will remove elements from DOM. This means that all your handlers or anything else attached to those elements will be lost. For example, if you bound a click handler to one of child elements, when ng-if evaluates to false, that element will be removed from DOM and your click handler will not work any more, even after ng-if later evaluates to true and displays the element. You will need to reattach the handler.
+		</li>
+</ul
+
+<p contenteditable></p></div>

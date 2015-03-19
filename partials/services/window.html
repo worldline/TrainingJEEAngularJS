@@ -1,0 +1,20 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Reference to the browser <span class ="text-red">window</span> object.</li>
+		<li>Can be mocked for testing, overriden or removed.</li>
+		<li>Always refer to this service instead of global variable <i>window</i>.</li>
+	</ul>
+
+<editor editor-options="{showPreview:true , showTabs:true , height:230 }">
+    <file type="html" name="window.html">&lt;div ng-controller="WindowCtrl"&gt;
+    &lt;input type="text" ng-model="userName" placeholder="Enter your name..." /&gt;
+    &lt;button class="btn" ng-click="showWelcomeAlert()"&gt;Login&lt;/button&gt;
+&lt;/div&gt;</file>
+	<file type="javascript" name="window.js">var WindowCtrl = function($scope, $window) {
+	$scope.showWelcomeAlert = function() {
+		$window.alert('Hello ' + $scope.userName + "!");
+	}
+}</file>
+</editor>
+
+<p contenteditable></p></div>

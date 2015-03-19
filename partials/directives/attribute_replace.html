@@ -1,0 +1,30 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>If <i class="text-red">false</i> (default), the template is append to the element.</li>
+		<li>If <i class="text-red">true</i>, the template will replace the current element.</li>
+	</ul>
+		
+<editor editor-options="{showPreview:false , showTabs:true , height:260, jsFiddle:true, module:'app' }">
+<file type="javascript" name="replace.js">angular.module('app',[])
+.directive('replaceTestFalse', function () {
+    return {
+        restrict: 'A',
+        template: '&lt;b&gt;Directive template content&lt;/b&gt;',
+    };
+});
+
+angular.module('app').directive('replaceTestTrue', function () {
+    return {
+		restrict: 'A',
+		replace: true,
+		template: '&lt;b&gt;Directive template content&lt;/b&gt;',
+    };
+});
+</file>
+<file type="html" name="replace.html">&lt;i replace-test-false&gt;Let's create a directive!&lt;/i&gt;
+&lt;br/&gt;
+&lt;i replace-test-true&gt;Let's create a directive!&lt;/i&gt;
+</file>
+</editor>
+
+<p contenteditable></p></div>

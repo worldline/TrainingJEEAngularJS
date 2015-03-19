@@ -1,0 +1,63 @@
+<div class="bloc-content text-content">
+		
+<editor editor-options="{showPreview:true , showTabs:true , height:280 }">
+	<file type="javascript" name="filterCtrl.js">var FilterCtrl = function($scope) {
+	$scope.users = [
+		{name:'Bob', phone:'1212', age:10, money: 25, date: '1288323623006'},
+		{name:'Bill', phone:'9876', age:19, money: 43, date: '1285324523606'},
+		{name:'Mike', phone:'5678', age:35, money: 80, date: '1288323854123'},
+		{name:'Adam', phone:'8765', age:29, money: 0, date: '1288329412539'}
+	];
+
+	$scope.predicate = 'name';
+	$scope.nbResults = 10;
+};
+</file>
+    <file type="html" name="filters.html">&lt;div ng-controller="FilterCtrl"&gt;
+	Filter: &lt;input type="text" ng-model="filterName"/&gt;
+	/ Show &lt;input type="text" ng-model="nbResults"/&gt; results
+	&lt;table&gt;
+		&lt;tr&gt;
+			&lt;th&gt;&lt;a href=""&gt;Name&lt;/a&gt;&lt;/th&gt;
+			&lt;th&gt;&lt;a href=""&gt;Phone&lt;/a&gt;&lt;/th&gt;
+			&lt;th&gt;&lt;a href=""&gt;Age&lt;/a&gt;&lt;/th&gt;
+			&lt;th&gt;&lt;a href=""&gt;Money&lt;/a&gt;&lt;/th&gt;
+			&lt;th&gt;&lt;a href=""&gt;Birth Date&lt;/a&gt;&lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;tr ng-repeat="user in users"&gt;
+			&lt;td&gt;{{user.name}}&lt;/td&gt;
+			&lt;td&gt;{{user.phone}}&lt;/td&gt;
+			&lt;td&gt;{{user.age}}&lt;/td&gt;
+			&lt;td&gt;{{user.money}}&lt;/td&gt;
+			&lt;td&gt;{{user.date}}&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+&lt;/div&gt;
+
+</file>
+</editor>
+<p contenteditable></p>
+</div>
+
+<!-- 
+<div ng-controller="FilterCtrl">
+	Filter: <input type="text" ng-model="filterName"/>
+    / Show <input type="text" ng-model="nbResults"/> results
+	<table>
+		<tr>
+			<th><a href="" ng-click="predicate='name'; reverse=!reverse">Name</a></th>
+			<th><a href="" ng-click="predicate='phone'; reverse=!reverse">Phone</a></th>
+			<th><a href="" ng-click="predicate='age'; reverse=!reverse">Age</a></th>
+			<th><a href="" ng-click="predicate='money'; reverse=!reverse">Money</a></th>
+            <th><a href="" ng-click="predicate='date'; reverse=!reverse">Birth Date</a></th>
+		</tr>
+		<tr ng-repeat="user in users | orderBy:predicate:reverse | filter:filterName | limitTo:nbResults">
+			<td>{{user.name  | uppercase}}</td>
+			<td>{{user.phone}}</td>
+			<td>{{user.age}}</td>
+			<td>{{user.money | currency}}</td>
+            <td>{{user.date | date:'dd/MM/yyyy'}}</td>
+		</tr>
+	</table>
+</div>
+ -->

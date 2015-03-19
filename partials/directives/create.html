@@ -1,0 +1,25 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>You can write and add your own directives by using the method <i class="text-red">directive()</i>
+			of Angular modules.</li>
+		<li>This function returns a <span class="text-red">Directive Definition Object</span>, which has several
+			attributes to configure your directive.</li>
+        <li>If two or more directives have the same name, they are all executed.</li>
+	</ul>
+		
+<editor editor-options="{showPreview:false , showTabs:true , height:210, jsFiddle:true,module:'app' }">
+	<file type="javascript" name="rating.js">angular.module('app',[]).directive('starRating', function () {
+    return {
+		link: function (scope, elem, attrs) {
+			console.log("Recognized the directive usage!");
+		}
+    };
+});
+</file>
+<file type="html" name="rating.html">&lt;div starRating&gt;Let's create a directive!&lt;/div&gt;
+
+&lt;!-- Why isn't it working??? --&gt;
+</file>
+</editor>
+
+<p contenteditable></p></div>

@@ -1,0 +1,32 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li><span class="text-red">Package manager</span> for <span class="text-red">client-side components</span>.</li>
+		<li>Search/install packages: <i class="text-red">bower search underscore</i>/<i class="text-red">bower install underscore</i>.</li>
+		<li>Can be used with <span class="text-red">AngularJS</span> to <span class="text-red">find</span>, 
+			<span class="text-red">install</span>, <span class="text-red">update</span> and <span class="text-red">publish</span> 
+			reusable components.</li>
+	</ul>
+		
+<editor editor-options="{showPreview:false , compileCode:false , theme:'terminal' , height:280 }">
+<file type="ini" name="app.js"># Search for a component by name
+bower search angular
+Search results:
+  - angular git://github.com/angular/bower-angular.git
+  - angular-resource git://github.com/angular/bower-angular-resource.git
+  ...
+# Search options
+bower search angular | grep "cookies"
+  ...
+# Download/install a component in a components directory and add it to bower.json
+bower install component-name --save
+
+# Download a component with a specific version.
+bower install component-name#version
+
+# Register you component and make it appear in searches
+bower register [app name] [git endpoint]
+</file>
+</editor>
+    <p contenteditable></p>
+</div>
+<div class="right-header"><img src="images/a519a6e9.bower.png" class="back-image" width="100" /></div>

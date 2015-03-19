@@ -1,0 +1,31 @@
+<div class="bloc-content text-content small">
+	<ul>
+		<li><em>link</em> should be used most of time and contain most of the logic</li>
+		<li><em>controller</em> is usefull to communicate between directives (if A requires B, then A can access to the B controller)
+		<li>
+			<em>controller</em> is executed before compilation while <em>link</em> is executed after
+			<ul>
+				<li>Directive1.link: add the element <code>span</code> to the DOM
+				<li>Directive2.controller: add content to this <code>span</code> </li> 
+				<li><strong>WON'T WORK</strong> -> link has not been executed at this time...</li>
+			</ul>
+		</li>
+		<li>
+			<em>link</em> parameters:
+			<ul>
+				<li><i class="text-red">$scope</i>: scope of the element</li>
+				<li><i class="text-red">$element</i>: the element</li>
+				<li><i class="text-red">$attrs</i>: attributes of the element</li>
+				<li><i class="text-red">$ctrl</i>: any controllers used in <em>require</em></li>
+			</ul>
+		</li>
+		<li>
+			<em>controller</em> parameters:
+			<ul>
+				<li>Same than other controllers, just use DI to inject services you need</li>
+			</ul>
+		</li>
+	</ul>
+
+	<p contenteditable></p>
+</div>

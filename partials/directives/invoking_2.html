@@ -1,0 +1,24 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Directives can be placed in:</li>
+		<ul>
+			<li class="text-red">Element names (E).</li>
+			<li class="text-red">Attributes (A).</li>
+			<li class="text-red">Class names (C).</li>
+			<li class="text-red "><del>Comments (M).</del></li>
+		</ul>
+		<li>However, most directives are restricted to <span class="text-red">attribute</span> only.</li>
+	</ul>
+
+<editor editor-options="{showPreview:false , showTabs:false , height:220 }">
+    <file type="html" name="directive.html">&lt;span my-dir="exp"&gt;&lt;/span&gt;
+&lt;span class="my-dir: exp;"&gt;&lt;/span&gt;
+&lt;my-dir&gt;&lt;/my-dir&gt;
+&lt;!-- directive: my-dir exp --&gt;
+
+&lt;span ng-bind="name"&gt;&lt;/span&gt;
+&lt;!-- NOT &lt;ng-bind="name"&gt;&lt;/ng-bind&gt; --&gt;
+</file>
+</editor>
+
+<p contenteditable></p></div>

@@ -1,0 +1,105 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Complete the directive <i class="text-red">starRating</i>, by displaying the CSS class corresponding
+			to the value of the property <i>productMarkCss</i> (in the <i>ProductRatingCtrl</i> scope).</li> 
+	</ul>
+	
+<editor editor-options="{showPreview:false , showTabs:true , height:350, jsFiddle:true, module:'app' }">
+	<file type="javascript" name="starRating.js">angular.module('app',[])
+.directive('starRating', function () {
+    return {
+		restrict: 'E',
+		transclude: true,
+		// TODO: scope
+		template: "&lt;p ng-class=\"value\" ng-transclude&gt;&lt;/p&gt;"
+    };
+});
+</file>
+<file type="html" name="product.html">&lt;div ng-controller="ProductRatingCtrl"&gt;
+	&lt;star-rating&gt;2 comments&lt;/star-rating&gt;
+	Mark: 
+	&lt;select ng-options="mark for mark in marks" ng-model="productMark" /&gt;
+&lt;/div&gt;
+</file>
+<file type="javascript" name="ProductRatingCtrl.js">var ProductRatingCtrl = function($scope) {
+	
+	$scope.marks = [ "one", "two", "three", "four", "five" ];
+	
+	// Default CSS Class for the product.
+	$scope.productMark = "three";
+	
+	$scope.$watch('productMark', function() {
+		$scope.productMarkCss = "rating " + $scope.productMark;
+	});
+	
+};
+</file>
+<file type="css" name="style.css">/* Ratings */
+p.rating {font-size: 0.75em;}
+.rating {
+    padding-left: 65px;
+    margin: 10px 0;
+}
+.rating a:link {color: #777; background: #FFF;}
+.five {
+    color: #000;
+    background: #FFF url(http://s29.postimg.org/jayhjd33r/bg_ratings.png) 0 -340px no-repeat;
+}
+.four {
+    color: #000;
+    background: #FFF url(http://s29.postimg.org/jayhjd33r/bg_ratings.png) 0 -262px no-repeat;
+}
+.three {
+    color: #000;
+    background: #FFF url(http://s29.postimg.org/jayhjd33r/bg_ratings.png) 0 -193px no-repeat;
+}
+.two {
+    color: #000;
+    background: #FFF url(http://s29.postimg.org/jayhjd33r/bg_ratings.png) 0 -127px no-repeat;
+}
+.one {
+    color: #000;
+    background: #FFF url(http://s29.postimg.org/jayhjd33r/bg_ratings.png) 0 -60px no-repeat;
+}
+.zero {
+    color: #000;
+    background: #FFF url(http://s29.postimg.org/jayhjd33r/bg_ratings.png) 0 1px no-repeat;
+}</file>
+</editor>
+
+<p contenteditable></p></div>
+<!--
+<div ng-app="app">
+<div class='html-content'><div ng-controller="ProductRatingCtrl">
+	<star-rating rating="{{productMarkCss}}">2 comments</star-rating>
+	Mark: 
+	<select ng-options="mark for mark in marks" ng-model="productMark" />
+</div></div></div>
+
+
+angular.module('app',[])
+.directive('starRating', function () {
+    return {
+		restrict: 'E',
+		transclude: true,
+        scope:{
+            rating:'@'   
+        },
+        template: "<p ng-class=\"rating\" ng-transclude></p>"
+    };
+});
+
+var ProductRatingCtrl = function($scope) {
+	
+	$scope.marks = [ "one", "two", "three", "four", "five" ];
+	
+	// Default CSS Class for the product.
+	$scope.productMark = "three";
+	
+	$scope.$watch('productMark', function() {
+		$scope.productMarkCss = "rating " + $scope.productMark;
+	});
+	
+};
+
+-->

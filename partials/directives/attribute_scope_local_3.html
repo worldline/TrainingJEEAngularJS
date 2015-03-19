@@ -1,0 +1,35 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li><i class="text-red">&</i> or <i class="text-red">&propertyName</i>: Executes an expression in the context
+			of the parent scope.</li>
+	</ul>
+
+	<ul
+		style="margin-bottom: 50px"
+		ng-init="
+			ids=['zh1bwozs/2/']; 
+			imgs=['local6'];
+			displayLinks= {};
+			"
+	>
+		<li ng-repeat="img in imgs" style="display:inline-block">
+			<ul 
+				class="sublinks" ng-show="displayLinks[img]"
+				ng-mouseenter="displayLinks[img]=true"
+				ng-mouseleave="displayLinks[img]=false"
+			>
+				<li ><a ng-href="images/binding/{{img}}.jpg" target="_check">as image</a></li>
+				<li ><a ng-href="http://jsfiddle.net/{{ids[$index]}}" target="_blank">as fiddle</a></li>
+			</ul>
+			<img 
+				style="width: 200px; height: 200px; margin: 5px;" 
+				ng-src="images/binding/{{img}}.jpg"
+				ng-mouseenter="displayLinks[img]=true"
+				ng-mouseleave="displayLinks[img]=false"
+			>	
+			</img>
+		</li>
+	</ul>	
+
+
+<p contenteditable></p></div>

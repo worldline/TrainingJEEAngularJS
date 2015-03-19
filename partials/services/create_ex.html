@@ -1,0 +1,37 @@
+
+	<div class="bloc-content text-content">
+		<ul>
+			<li><span class="text-red">Exercises</span>
+			<ol style="font-size: 20px">
+				<li>Create a service which handles all User logic.</li>
+			</ol>
+		</ul>
+		
+<editor editor-options="{showPreview:true , showTabs:true , height:180 }">
+    <file type="html" name="view.html">&lt;div ng-app="UserApp"&gt;
+    &lt;div ng-controller="UserCtrl"&gt;
+	    Welcome to your profile page, {{currentUser.name}}
+	    Change login: &lt;input type="text" ng-model="currentUser.login"/&gt;&lt;br/&gt;
+	    Change password: &lt;input type="text" ng-model="currentUser.password"/&gt;&lt;br/&gt;
+	    &lt;button class="btn" ng-click="saveUser()"&gt;Save&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</file>
+
+	<file type="javascript" name="controller.js">var UserCtrl = function($scope) {
+	$scope.currentUser = { name: "Bob", login: "BobSponge", password: "password" };
+	
+	$scope.saveUser = function() {
+		if (login != "" && password != "") {
+			//TODO later: call post service.
+		}
+	};
+}
+</file>
+
+<file type="javascript" name="app.js">var app = angular.module('UserApp', []);
+
+</file>
+</editor>
+
+	<p contenteditable></p></div>

@@ -1,0 +1,26 @@
+	<div class="bloc-content text-content">
+		<ul>
+			<li class="text-red">Shortcut methods</li>
+			<ul>
+				<li>You can directly call <i clas="text-red">get</i>, <i clas="text-red">head</i>, <i clas="text-red">post</i>, <i clas="text-red">put</i>, 
+					<i clas="text-red">delete</i>, <i clas="text-red">jsonp</i> methods from <i>$http</i> object.</li>
+			</ul>
+		</ul>
+		
+<editor editor-options="{showPreview:false , showTabs:false , height:330 }">
+	<file type="javascript" name="http.js">var HttpCtrl = function($scope, $http) {
+	
+	$http.get('/products').success(successCallback).error(errorCallback);
+	
+	$scope.saveUser = function(user) {
+		$http.post('/user', user).success(successCallback);
+	};
+	
+	function successCallback(result) {}
+	
+	function errorCallback(reason) {}
+};
+</file>
+</editor>
+		
+<p contenteditable></p></div>

@@ -1,0 +1,66 @@
+<div class="bloc-content text-content">
+	<ul>
+        <li>We recommend you to learn from <a href="https://github.com/angular/angular.js/tree/master/test" target="_blank">Angular Own Unit Tests</a> as there is a plethora of tests available.</li>
+        <li>Take also a deep look of <a href="http://jasmine.github.io/2.0/introduction.html" target="_blank">Jasmine documentation</a></li>
+		<li>Easiest blocks of code to test.</li>
+	</ul>
+		
+<editor editor-options="{showPreview:false , compileCode:false ,showTabs:true , height:520 }">
+<file type="javascript" name="app/js/services/myModule.js">angular.module('myModule', [], function($provide) {
+    $provide.factory('notify', ['$window', function(win) {
+        var msgs = [];
+        return function(msg) {
+            msgs.push(msg);
+         if (msgs.length == 3) {
+             win.alert(msgs.join("\n"));
+             msgs = [];
+         }
+        };
+    }]);
+});</file>
+<file type="javascript" name="test/unit/appSpec.js">describe("notify", function() {
+
+    var mock, notify;
+
+    beforeEach(function() {
+        mock = {alert: jasmine.createSpy()};
+
+        module(function($provide) {
+            $provide.value('$window', mock);
+        });
+
+        inject(function($injector) {
+            notify = $injector.get('notify');
+        });
+    });
+
+    it('should not alert first two notifications', function() {
+        notify('one');
+        notify('two');
+
+        expect(mock.alert).not.toHaveBeenCalled();
+    });
+
+    it('should alert all after third notification', function() {
+        notify('one');
+        notify('two');
+        notify('three');
+
+        expect(mock.alert).toHaveBeenCalledWith("one\ntwo\nthree");
+    });
+
+    it('should clear messages after alert', function() {
+        notify('one');
+        notify('two');
+        notify('third');
+        notify('more');
+        notify('two');
+        notify('third');
+
+        expect(mock.alert.callCount).toEqual(2);
+        expect(mock.alert.mostRecentCall.args).toEqual(["more\ntwo\nthird"]);
+    });
+});</file>
+</editor>
+		
+<p contenteditable></p></div>

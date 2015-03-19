@@ -1,0 +1,12 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li><span class="text-red">$scope.$digest</span>: 
+		<ul>
+			<li>Processes all the watchers of the current scope and its children.</li>
+			<li>Keeps calling all the watchers as long as changes are notified in the model.</li>
+			<li>Possible to get into an infinite loop. Will throw <i>Maximum iteration limit exceeded</i> if the 
+				number of iterations exceeds 10.</li>
+			<li><i>Never use it directly, call <span class="text-red">$scope.$apply</span> instead.</i></li>
+		</ul>
+	</ul>
+<p contenteditable></p></div>

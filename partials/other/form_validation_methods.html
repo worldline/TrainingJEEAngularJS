@@ -1,0 +1,38 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li><i>$scope.myForm.<span class="text-red">$setPristine()</span></i>: Changes form state to <i class="text-red">
+			$pristine</i>.</li>
+		<li><i>$scope.myForm.element.<span class="text-red">$setValidity(ruleName, isNotValid)</span></i>: Defines if the
+			rule <i>ruleName</i> (<i>required</i>, <i>min</i>, etc.) has been validated (<i>false</i>) or not.</li>
+	</ul>
+		
+<editor editor-options="{showPreview:true , showTabs:true , height:300 }">
+	<file type="javascript" name="mailCtrl.js">var MailCtrl = function($scope) {
+	$scope.$watch('user', function() {
+        if($scope.user.email == $scope.user.email2){
+            $scope.myForm.email.$setValidity('samemail', true);
+            $scope.myForm.email2.$setValidity('samemail', true);
+        } else {
+            $scope.myForm.email.$setValidity('samemail', false);
+            $scope.myForm.email2.$setValidity('samemail', false);
+        }
+    }, true);
+};
+</file>
+<file type="html" name="mail.html">&lt;form name="myForm" ng-controller="MailCtrl"&gt;
+	&lt;div ng-class="{error : myForm.email.$invalid}"&gt;
+		Email &lt;input name="email" type="email" ng-model="user.email"&gt;
+		&lt;span ng-show="myForm.email.$error.email"&gt;Mail is not valid!&lt;/span&gt;
+	&lt;/div&gt;
+	
+	&lt;div class="control-group" ng-class="{error : myForm.email2.$invalid}"&gt;
+		Confirm mail 
+		&lt;input name="email2" type="email" ng-model="user.email2" 
+			ng-change="checkEmail()"&gt;
+		&lt;span ng-show="myForm.email2.$error.samemail"&gt;Not the same mail!&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/form&gt;
+</file>
+</editor>
+
+<p contenteditable></p></div>

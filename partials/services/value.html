@@ -1,0 +1,22 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Register it with <span class="text-red">value(name, value)</span> function</li>
+		<li>Used for simple objects which do not need any other services, like utility method libraries.</li>
+	</ul>
+		
+<editor editor-options="{showPreview:false , showTabs:false , height:440 }">
+	<file type="javascript" name="service.js">var appServices = angular.module('ecommerce.services', []);
+
+// Simple constant
+appServices.value('nbProductsPerPage', 5);
+
+// Utility methods library, but DI is not available
+appServices.value('ProductUtils', function() {
+	//TODO
+});
+
+
+</file>
+</editor>
+
+<p contenteditable></p></div>

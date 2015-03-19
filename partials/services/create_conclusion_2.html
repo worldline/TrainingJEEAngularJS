@@ -1,0 +1,51 @@
+
+	<div class="bloc-content text-content">
+		<table class="key-list" style="text-align: center;">
+			<thead>
+				<tr>
+					<th>Method</th>
+					<th>Can be configured?</th>
+					<th>Dependency Injection</th>
+					<th>When is the service created?</th>
+					<th>Provider name</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><b class="text-red">provider()</b></td>
+					<td>Yes</td>
+					<td>Yes</td>
+					<td>First access, with <i>$get</i> method.</td>
+					<td>Service name + "Provider"</td>
+				</tr>
+				<tr>
+					<td><b class="text-red">factory()</b></td>
+					<td>No</td>
+					<td>Yes</td>
+					<td>First access, by calling the function.</td>
+					<td>Service name + "Provider"</td>
+				</tr>
+				<tr>
+					<td><b class="text-red">service()</b></td>
+					<td>No</td>
+					<td>Yes</td>
+					<td>First access, using the function as a constructor.</td>
+					<td>Service name + "Provider"</td>
+				</tr>
+				<tr>
+					<td><b class="text-red">value()</b></td>
+					<td>No</td>
+					<td>No</td>
+					<td>Existing instance.</td>
+					<td>Service name + "Provider"</td>
+				</tr>
+				<tr>
+					<td><b class="text-red">constant()</b></td>
+					<td>Yes</td>
+					<td>No</td>
+					<td>Existing instance.</td>
+					<td>Service name</td>
+				</tr>
+			</tbody>
+		</table>
+	<p contenteditable></p></div>

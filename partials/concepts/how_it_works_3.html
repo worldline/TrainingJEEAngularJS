@@ -1,0 +1,21 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Directive <span class="text-red">ng-init</span> is used to specify initialization tasks.</li>
+		<li>In this case, variable <span class="text-red">$scope.name</span> gets value <i>World</i>.</li>
+		<li><i>{ {name} }</i> is turned into <i>World</i>.</li>
+	</ul>
+	
+<editor editor-options="{showPreview : false, height: 320, compileCode: false}">
+<file type="html" name="index.html">&lt;!DOCTYPE html&gt;  
+&lt;html ng-app&gt;
+	&lt;head/&gt;
+	&lt;body&gt;
+		&lt;p ng-init="name='World'"&gt;Hello {{name}}!&lt;/p&gt;
+		
+		&lt;script src="lib/angular/angular.js"&gt;&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</file>
+</editor>
+
+<p contenteditable></p></div>

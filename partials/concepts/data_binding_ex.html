@@ -1,0 +1,36 @@
+<div ng-controller="DataBindingExCtrl">
+	<div class="bloc-content text-content">
+
+		<ul>
+			<li><span class="text-red">Exercises</span></li>
+			<ol>
+				<li>Replace <i>???</i> with the firstName/lastName entered by the user.</li>
+				<li>Resets all fields when the user clicks on the <i>Reset</i> button.</li>
+			</ol>
+		</ul>
+
+<editor editor-options="{showPreview:true , height:230 }">
+<file type="html" name="index.html">First name: &lt;input type="text" id="txtFirstName" /&gt;,
+Last name: &lt;input type="text" id="txtLastName" /&gt;
+&lt;button class="btn" id="btnReset"&gt;
+	Reset fields
+&lt;/button&gt;
+&lt;br/&gt;
+Hello, Mister &lt;i id="lblName"&gt;???&lt;/i&gt;
+</file>
+</editor>
+        <p contenteditable></p>
+	</div>
+	<button-valid/>
+</div>
+
+
+<!--
+First name: <input type="text" id="txtFirstName" ng-model="person.firstName" />,
+Last name: <input type="text" id="txtLastName" ng-model="person.lastName" />
+<button class="btn" id="btnReset" ng-click="person={}">
+	Reset fields
+</button>
+<br/>
+Hello, Mister <i id="lblName">{{person.firstName}} {{person.lastName}}</i>
+-->

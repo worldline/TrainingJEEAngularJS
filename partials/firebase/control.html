@@ -1,0 +1,35 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>You can use <i class="text-red">angularFireCollection</i> to control when local changes are synchronized with Firebase. 
+			Invoke methods <i class="text-red">add</i>, <i class="text-red">remove</i> or <i class="text-red">update</i> to update
+			the remote data.</li>
+	</ul>
+	
+<editor editor-options="{showPreview:false , showTabs:false , compileCode:false , height:360 }">
+<file type="javascript" name="ItemController.js">var ItemController = function($scope, angularFireCollection) {
+	
+	var firebaseCallback = function() {
+		console.log($scope.messages);
+	};
+	
+	// Second parameter is an optional callback.
+	$scope.messages = angularFireCollection(
+		new Firebase("https://angular-training.firebaseio.com/messages"), 
+		firebaseCallback
+	);
+	
+	$scope.sendMsg = function() {
+		// Firebase function used to add a new element.
+		$scope.messages.add($scope.message);
+	};
+	
+	$scope.removeMsg = function(message) {
+		// Firebase function used to remove a collection element.
+		$scope.messages.remove(message);
+	};
+};
+
+</file>
+</editor>
+	
+<p contenteditable></p></div>

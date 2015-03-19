@@ -1,0 +1,31 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li><i class="text-red">priority</i>: Used to specify in which order the directives are applied on an 
+			element. Those with greater priority are compiled first. Default value is <i class="text-red">0</i>.</li>
+		<li><i class="text-red">terminal</i>: If set to <i class="text-red">true</i>, all other directives 
+			with lesser <i class="text-red">priority</i> will not be compiled.</li>
+	</ul>
+		
+<editor editor-options="{showPreview:false , showTabs:true , height:310, jsFiddle:true, module:'app' }">
+	<file type="javascript" name="priority.js">angular.module('app',[]).directive('priorityTest', function () {
+    return {
+		priority: 10,
+		link: function (scope, elem, attrs) {
+			console.log("Directive priorityTest has been compiled!");
+		}
+    };
+})
+.directive('priorityTestBis', function () {
+    return {
+		priority: 20,
+		terminal: true,
+		link: function (scope, elem, attrs) {
+			console.log("Directive priorityTestBis has been compiled!");
+		}
+    };
+});</file>
+<file type="html" name="priority.html">&lt;span priority-test priority-test-bis&gt;Let's create a directive!&lt;/span&gt;
+</file>
+</editor>
+
+<p contenteditable></p></div>

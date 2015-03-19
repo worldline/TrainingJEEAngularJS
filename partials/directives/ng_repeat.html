@@ -1,0 +1,21 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li><em>ng-repeat</em> iterates over a collection of items</li>
+		<li>Each template gets <span class="text-red">its own scope</span>, with following added properties:</li>
+		<ul>
+			<li><i class="text-red">$index</i>: iterator offset of the repeated element.</li>
+			<li><i class="text-red">$first </i>, <i class="text-red">$middle</i>, <i class="text-red">$last</i>: 
+				booleans used to test the element position in the collection.</li>
+		</ul>
+	</ul>
+		
+<editor editor-options="{showPreview:true , showTabs:false , height:140 }">
+<file type="html" name="http.html">&lt;!-- div ng-repeat="user in listUsers" --&gt;
+&lt;div ng-repeat="login in [ 'Bob', 'Luc', 'Bill' ]"&gt;
+	&lt;b&gt;{{login}}&lt;/b&gt;. Index: {{$index}}, first: {{$first}}, 
+		middle: {{$middle}}, last: {{$last}}
+&lt;/div&gt;
+</file>
+</editor>
+
+<p contenteditable></p></div>

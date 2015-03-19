@@ -1,0 +1,27 @@
+	<div class="bloc-content text-content">
+		<ul>
+			<li>Facilitates communication with remote HTTP servers via <span class="text-red">XMLHttprequest</span>
+				or <span class="text-red">JSONP</span>.</li>
+			<li>Based on the <span class="text-red">deferred/promise API</span>.</li>
+			<li>You can enable <span class="text-red">cache</span> to store the response in local cache.</li>
+		</ul>
+
+<editor editor-options="{showPreview:true , showTabs:true , height:310 }">
+    <file type="html" name="http.html">&lt;div ng-controller="HttpCtrl"&gt;
+    File content: {{result}}
+&lt;/div&gt;</file>
+	<file type="javascript" name="http.js">var HttpCtrl = function($scope, $http) {
+	$scope.result = "Loading file...";
+	$http({method: 'GET', url: 'data/sample.json'}).
+		success(function(data, status, headers, config) {
+			$scope.result = data;
+		}).
+		error(function(data, status, headers, config) {
+			$scope.result = "Error loading file.";
+		});
+};
+</file>
+</editor>
+
+		
+<p contenteditable></p></div>

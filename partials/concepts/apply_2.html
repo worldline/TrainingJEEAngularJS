@@ -1,0 +1,31 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Will throw following error if used in the wrong place: <i>$apply already in progress</i>.</li>
+		<li>Can be used for example in a non-Angular event handler.</li>
+			
+<editor  editor-options="{showPreview:true,showTabs:true,height:300}">
+	<file type="javascript" name="apply-ctrl.js">var ApplyCtrl = function($scope) {
+	
+	$scope.btnClickHandler = function() {
+		// Will throw an error...
+		$scope.$apply(function() {
+			$scope.message = "Click on button";
+		});
+	};
+	
+	setTimeout(function () {
+        $scope.$apply(function () {
+            $scope.message = "Timeout called!";
+        });
+    }, 2000);
+};
+</file>
+    <file type="html" name="apply.html">&lt;div ng-controller="ApplyCtrl"&gt;
+	&lt;button class="btn" ng-click="btnClickHandler()"&gt;Click me!&lt;/button&gt; 
+	Message: {{message}}
+&lt;/div&gt;
+</file>
+</editor>
+
+	</ul>
+<p contenteditable></p></div>

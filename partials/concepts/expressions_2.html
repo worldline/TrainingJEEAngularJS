@@ -1,0 +1,33 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Keep your expressions <span class="text-red">simple</span>!</li>
+		<ul>
+			<li>Less code as possible in the view.</li>
+			<li>No unit tests for the code in the views.</li>
+			<li>Prefer using controller functions.</li>
+			<li>Harder to debug!</li>
+		</ul>
+	</ul>
+		
+<editor editor-options="{mode:'javascript' , height:500 , compileCode:false }">
+<file type="javascript" name="index.html">//Expression only in the view...
+
+{{isUserLogged == true && ("Hello, " + currentUser.gender + " " + currentUser.firstName + " " + currentUser.lastName) || "You need to log in."}}</i>
+
+// ...Or using controller functions. What do you prefer?  //////////////////////////////
+
+{{getWelcomeLabel()}}
+
+var ExpressionCtrl = function($scope) {
+
+	$scope.getWelcomeLabel = function() {
+		return $scope.isUserLogged ? "Hello, " + getUserName() : "You need to log in.";
+	};
+	
+	getUserName = function() {
+		return currentUser.gender + " " + currentUser.firstName + " " + currentUser.lastName;
+	}
+}</file>
+</editor>
+
+<p contenteditable></p></div>

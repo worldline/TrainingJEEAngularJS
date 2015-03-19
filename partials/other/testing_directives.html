@@ -1,0 +1,43 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Follow the steps below before testing your directives:</li>
+		<ol>
+			<li>Load the template of the directive.</li>
+			<li>Create an HTML element which uses your directive.</li>
+			<li>Create a new scope, and provide any data needed by your directive.</li>
+			<li>Use the service <i>$compile</i> to compile your html element with the newly created scope.</li>
+			<li>You can now use the generated html to test the behavior of your directive.</li>
+		</ol>
+	</ul>
+	
+<editor editor-options="{showPreview:false , compileCode:false , height:230 }">
+<file type="javascript" name="tabsSpec.js">describe('starRating directive unit test', function() {
+	var elem, scope;
+
+	// Load the directive.
+	beforeEach(module('app'));
+	
+	// Load the directive template.
+	beforeEach(module('templates/partials/starRating.html'));
+  
+	// Done before each test. Creates the tested DOM.
+	beforeEach(inject(function($rootScope, $compile) {
+		
+		// Create a html snippet which uses the directive to test.
+		elem = angular.element('&lt;star-rating&gt;&lt;/star-rating&gt;');
+
+		scope = $rootScope;
+		scope.rating = 3;
+		
+		// Compile the HTML snippet.
+		$compile(elem)(scope);
+		scope.$digest();
+	}));
+	
+	// TODO: tests, using elem and scope.
+});
+
+</file>
+</editor>
+	
+<p contenteditable></p></div>

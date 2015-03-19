@@ -1,0 +1,98 @@
+<div class="bloc-content text-content">
+	
+<editor editor-options="{showPreview:false , showTabs:true , compileCode:false , height:540 }">
+<file type="javascript" name="karma.conf.js">// Karma configuration
+module.exports = function(config) {
+	config.set({
+		
+		// Used to change your templates/views into js testable files.
+		preprocessors : {
+			'templates/**/*.html' : 'ng-html2js'
+		},
+
+		// base path, that will be used to resolve files and exclude
+		basePath : '../app/',
+
+		// frameworks to use
+		frameworks : [ 'jasmine' ],
+
+		// list of files / patterns to load in the browser
+		files : [ 
+			'component/angular/angular.js',
+            'component/**/*.js',
+			'js/**/*.js',
+			'../test/lib/angular/angular-mocks.js', 
+			'../test/unit/**/*.js',
+			'templates/**/*.html' 
+		],
+
+		// list of files to exclude
+		exclude : [
+
+		],
+
+		// test results reporter to use
+		// possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
+		reporters : [ 'progress' ],
+
+		// web server port
+		port : 9876,
+
+		// enable / disable colors in the output (reporters and logs)
+		colors : true,
+
+		// level of logging
+		// possible values: config.LOG_DISABLE || config.LOG_ERROR ||
+		// config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+		logLevel : config.LOG_INFO,
+
+		// enable / disable watching file and executing tests whenever any file
+		// changes
+		autoWatch : false,
+
+		// Start these browsers, currently available:
+		// - Chrome
+		// - ChromeCanary
+		// - Firefox
+		// - Opera
+		// - Safari (only Mac)
+		// - PhantomJS
+		// - IE (only Windows)
+		browsers : [ 'Chrome' ],
+
+		// If browser does not capture in given timeout [ms], kill it
+		captureTimeout : 60000,
+
+		// Continuous Integration mode
+		// if true, it capture browsers, run tests and exit
+		singleRun : false
+	});
+};
+
+</file>
+<file type="json" name="package.json">//partial
+    //add to your dev dependencies
+    "devDependencies": {
+        "karma": "~0.10.9"
+        "karma-jasmine": "~0.1.5",
+        "karma-chrome-launcher": "~0.1.2",
+        "karma-firefox-launcher": "~0.1.3",
+        "karma-ng-html2js-preprocessor": "~0.1.0"
+    }
+    //....
+</file>
+    <file type="text" name="npm">#Quick reminder about npm
+
+$ npm install karma --save-dev
+npm install express --save
+
+#read package.json and install all dependencies
+$ npm install
+
+#read package.json and install dependencies but not devDependencies
+$ npm install --production
+    </file>
+
+</editor>
+
+<p contenteditable></p></div>

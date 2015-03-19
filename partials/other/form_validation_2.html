@@ -1,0 +1,20 @@
+<div class="bloc-content text-content">
+	
+<editor editor-options="{showPreview:true , showTabs:false , height:400 }">
+<file type="html" name="register.html">&lt;form name="myForm"&gt;
+	&lt;div ng-class="{error : myForm.name.$dirty && myForm.name.$error.required}"&gt;
+		Name *
+    	&lt;input name="name" type="text" ng-model="user.name" required&gt;
+    	&lt;span ng-show="myForm.name.$dirty && myForm.name.$error.required"&gt;
+    		Name is required!&lt;/span&gt;
+	&lt;/div&gt;
+	
+	&lt;div ng-class="{error : myForm.email.$invalid}"&gt;
+		Email
+		&lt;input name="email" type="email" ng-model="user.email"&gt;
+		&lt;span ng-show="myForm.email.$error.email"&gt;Mail is not valid!&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/form&gt;
+</file>
+</editor>
+<p contenteditable></p></div>

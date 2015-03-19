@@ -1,0 +1,23 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li> <em>bad practice</em> -> create a function in the global scope...</li>
+		<li> Instead, use the <span class="text-red">.controller</span> method of your Angular module</li>
+	</ul>
+		
+<editor editor-options="{showPreview: false, compileCode:false , height:350 }">
+<file type="javascript" name="app.js">function GreetingCtrl($scope) {
+	$scope.greeting = 'Hola!';
+}
+GreetingCtrl.$inject = ['$scope'];
+
+// OR
+
+var myApp = angular.module('myApp', []);
+
+myApp.controller('GreetingCtrl', ['$scope', function($scope) {
+	$scope.greeting = 'Hola!';
+}]);
+</file>
+</editor>
+		
+<p contenteditable></p></div>

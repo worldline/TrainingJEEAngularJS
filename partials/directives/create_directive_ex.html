@@ -1,0 +1,63 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li><span class="text-red">Exercise</span>: Create a directive called <i class="text-red">ConfirmClick</i>, which displays a confirm dialog
+			box on an element click. The dialog message has to be configurable.</li>
+	</ul>
+		
+<editor editor-options="{showPreview:false , showTabs:true , height:280, jsFiddle:true, module:'app', uiBootstrap:true }">
+<file type="html" name="confirm.html">&lt;div ng-init="login='Bob'"&gt;
+	&lt;button class="btn" ng-click="login=''"&gt;Reset login&lt;/button&gt;
+	Login: {{login}}
+&lt;/div&gt;
+</file>
+<file type="javascript" name="confirm.js">angular.module('app',['ui.bootstrap'])
+.directive('confirmClick', function($modal) {
+    return {
+        restrict: 'A',
+        link: function(scope, elm, attrs) {
+            var button = elm[0];
+
+            //TODO: use 'on' function on the button.
+            //TODO: display a confirm box using $modal service
+            //TODO: if OK is clicked, evaluate the content of the ng-click with scope.$eval.
+            //TODO: if Cancel is clicked, nothing happens.
+        }
+    };
+});
+</file>
+</editor>
+<p contenteditable></p>
+</div>
+
+<!-- 
+angular.module('app',['ui.bootstrap'])
+.directive('confirmClick', function($modal) {
+    return {
+        restrict: 'A',
+        priority:1,
+        terminal:true,
+        link: function(scope, elm, attrs) {
+            var button = elm[0];
+
+
+            var clickHandler = attrs.ngClick;
+
+            attrs.ngClick = null;
+            elm.on('click',function($event){
+
+                var modal = $modal.open({
+                    template: ' <div><h3>Are you sure ?</h3></div><div class="modal-footer">' +
+                              '<button class="btn btn-primary" ng-click="$close()">OK</button>' +
+                              '<button class="btn btn-warning" ng-click="$dismiss()">Cancel</button></div>'
+                });
+
+                modal.result.then(function(){
+                    scope.$eval(clickHandler);
+                });
+
+            });
+        }
+    }
+    });
+
+ -->

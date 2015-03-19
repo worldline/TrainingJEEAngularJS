@@ -1,0 +1,21 @@
+
+	<div class="bloc-content text-content">
+		<ul>
+			<li>Angular filters are used to <span class="text-red">format data</span> for display to the user.</li>
+			<li>They are especially used to format <span class="text-red">binding expressions in your templates</span>.</li>
+			<li>Filters can be <span class="text-red">chained</span>, and can also take <span class="text-red">optional arguments</span>.</li>
+		</ul>
+		
+<editor editor-options="{showPreview:true , showTabs:false , height:180 }">
+<file type="html" name="filter.html">&lt;div ng-init="unfilteredPrice = '27.95'"&gt;
+	Price: {{unfilteredPrice}} &lt;br/&gt;
+	Price: {{unfilteredPrice | currency}} &lt;br/&gt;
+	Price: {{unfilteredPrice | number:5}} &lt;br/&gt;
+	Price: {{unfilteredPrice | number:0 | currency}} &lt;br/&gt;
+	Price: {{unfilteredPrice | currency | number:4}} &lt;br/&gt;
+&lt;/div&gt;
+</file>
+</editor>
+		
+
+	<p contenteditable></p></div>

@@ -1,0 +1,29 @@
+<div class="bloc-content text-content">
+		<ul>
+			<li>You can register new filters in your application, using <i class="text-red">filter()</i> module  
+				function.</li>
+			<li>It returns a filter function, which takes the value to filter as the first argument. 
+				Then, all filter parameters are passed as additional arguments.</li>
+		</ul>
+		
+<editor editor-options="{showPreview:true , showTabs:true , height:270 }">
+<file type="html" name="testFilter.html">{{ "Deinstitutionalization" | split:10 }}&lt;br/&gt;
+{{ "Deinstitutionalization" | split:5:true }}&lt;br/&gt;
+</file>
+<file type="javascript" name="filters.js">angular.module('users.filters', []).
+	filter('split', function() {
+		return function(input, nbChars, uppercase) {
+			var out = input;
+			if (input.length &gt; nbChars) {
+				out = input.substring(0, nbChars) + "...";
+			}
+			if (uppercase) {
+				out = out.toUpperCase();
+			}
+			return out;
+		};
+	});
+</file>
+</editor>
+
+<p contenteditable></p></div>

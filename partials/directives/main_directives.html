@@ -1,0 +1,22 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li><i class="text-red">ngApp</i>: Designates the root of the application, generally placed at the root
+			of the page. Only one per HTML document.</li>
+		<li><i class="text-red">ngController</i>: Assigns behavior to a scope. Links a view to a controller.</li>
+		<li><i class="text-red">ngInit</i>: Specifies initialization tasks.</li>
+		<li><i class="text-red">ngModel</i>: Does two-way data binding between a <i>$scope</i> property and
+			and an <i>input</i>/<i>select</i>/<i>textarea</i> or custom HTML component.</li>
+	</ul>
+		
+<editor editor-options="{showPreview:true , showTabs:false , height:160 }">
+<file type="html" name="http.html">&lt;body ng-app="UserApp"&gt;
+	&lt;div ng-controller="UserCtrl" ng-init="currentUser = { 'login': 'BobSponge' }"&gt;
+	    &lt;input type="text" ng-model="currentUser.login" /&gt;
+	&lt;/div&gt;
+&lt;/body&gt;</file>
+<file type="javascript" name="http.js">var UserCtrl = function($scope) {
+}
+</file>
+</editor>
+
+<p contenteditable></p></div>

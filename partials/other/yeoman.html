@@ -1,0 +1,42 @@
+
+	<div class="bloc-content text-content">
+		<ul>
+			<li>A tool for simplifying client-side development workflow. 
+			<li>Includes several features for building Angular applications:</li>
+		</ul>
+		
+<editor editor-options="{showPreview:false , compileCode:false , theme:'terminal' , height:380 }">
+<file type="ini" name="app.js"># Install the generator
+npm install -g generator-angular
+
+# Create a new Angular application in current directory
+yo angular 
+
+# Angular artifacts generators
+
+# Generates a controller in app/scripts/controllers.
+yo angular:controller myController
+
+# Generates a directive in app/scripts/directives.
+yo angular:directive myDirective
+
+# Generates a filter in app/scripts/filters.
+yo angular:filter myFilter
+
+# Generates an AngularJS service in app/scripts/services.
+yo angular:service myService
+
+# Generates a controller and view, and configures a route 
+# in app/scripts/app.js connecting them.
+yo angular:route myRoute
+
+# Generates an HTML view file in app/views.
+yo angular:view myView
+
+# You can also create your own generators.
+yo generator
+</file>
+</editor>
+        <p contenteditable></p>
+</div>
+<div class="right-header"><img src="images/e92229fb.yeoman.png" class="back-image" width="100" /></div>

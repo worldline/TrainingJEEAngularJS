@@ -1,0 +1,16 @@
+
+	<div class="bloc-content text-content">
+		<ul>
+			<li><i>Problem</i>: Angular artifacts are registered <span class="text-red">only when the application
+			is bootstrapped</span>.</li>
+			<li>If you register a new controller in an already boostrapped app, you will get following an error 
+				when trying to use it with <i class="text-red">ng-controller</i> directive:<br/>
+				<i>Error: Argument 'MyController' is not a function, got undefined.</i></li>
+			<li>Same problem with <span class="text-red">services</span>, <span class="text-red">directives</span>, etc.</li>
+		</ul>
+		<br/><br/><br/>
+		<ul>
+			<li><i>So I have to load all my <span class="text-red">directives</span>/<span class="text-red">controllers</span>
+				/etc. the first time... ?</i></li>
+		</ul>
+	<p contenteditable></p></div>

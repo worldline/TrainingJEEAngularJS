@@ -1,0 +1,29 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li><span class="text-red">Show</span> or <span class="text-red">hide</span> a portion of the DOM tree conditionally.</li>
+	</ul>
+		
+<editor editor-options="{showPreview:true , showTabs:false , height:250 }">
+<file type="html" name="http.html">&lt;div ng-init="bShowDiv = true"&gt;
+	&lt;button class="btn" ng-click="bShowDiv = !bShowDiv"&gt;Show/Hide&lt;/button&gt;
+	&lt;div ng-show="bShowDiv"&gt;
+		I'm visible because &lt;i&gt;bShowDiv&lt;/i&gt; is {{bShowDiv}}.
+	&lt;/div&gt;
+	
+	&lt;input type="text" ng-model="login"/&gt;
+	&lt;span ng-hide="!login || login.length &lt; 7"&gt;Login is too long!!!&lt;/span&gt;
+&lt;/div&gt;
+</file>
+</editor>
+
+<ul>
+		<li>
+ng-show/ng-hide does not remove the elements from DOM. It uses CSS styles to hide/show elements (note: you might need to add your own classes). This way your handlers that were attached to children will not be lost.
+		</li>
+
+		<li>
+ng-if creates a child scope while ng-show/ng-hide does not
+		</li>
+</ul
+
+<p contenteditable></p></div>

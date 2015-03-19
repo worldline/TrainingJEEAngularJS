@@ -1,0 +1,24 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li><i class="text-red">ngStyle</i>: Sets CSS style on an HTML element conditionally.</li>
+		<li><i class="text-red">ngClass</i>: Sets CSS classes on HTML an element, dynamically.</li>
+		<li><i>Warning</i>: Write <span class="text-red">class names</span> in CamelCase!</li>
+        <li><i>Warning 2</i>The value is a JS Object</li>
+	</ul>
+
+<editor editor-options="{showPreview:true , showTabs:false , height:270 }">
+<file type="html" name="http.html">&lt;select ng-model="buttonSize" 
+	ng-options="size for size in [ 'small', 'normal', 'big' ]"&gt;
+	&lt;option value=""&gt;-- Choose Size --&lt;/option&gt;
+&lt;/select&gt;
+&lt;button ng-class="{ btn: true, btnSmall: buttonSize == 'small', 
+	btnBig: buttonSize == 'big'}"&gt;Button&lt;/button&gt;
+
+&lt;span ng-repeat="colorValue in ['red', 'blue', 'green']" 
+	ng-style="{ color: colorValue, 'font-size': '15px' }"&gt;
+	{{colorValue}}
+&lt;/span&gt;
+</file>
+</editor>
+
+<p contenteditable></p></div>

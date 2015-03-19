@@ -1,0 +1,143 @@
+<div class="bloc-content text-content">
+   <ul>
+       <li>We will be using Jasmine Framework as testing syntax (like unit test)</li>
+       <li><a href="https://github.com/angular/protractor/blob/master/docs/getting-started.md" target=”_blank”>Protractor Getting started</a></li>
+       <li><a href="https://github.com/angular/protractor/blob/master/docs/debugging.md" target=”_blank”>Debugging with protractor</a></li>
+       <li>Great tools : elementexplorer.js</li>
+   </ul>
+    <editor editor-options="{showPreview:false , showTabs:true , compileCode:false , height:500 }">
+        <file type="javascript" name="calculatorSpec.js">describe('slow calculator', function() {
+    beforeEach(function() {
+        browser.get('http://localhost:3456');
+    });
+
+    it('should add numbers', function() {
+        element(by.model('first')).sendKeys(4);
+        element(by.model('second')).sendKeys(5);
+
+        element(by.id('gobutton')).click();
+
+        expect(element(by.binding('latest')).getText()).toEqual('9');
+    });
+
+    describe('memory', function() {
+        var first, second, goButton;
+        beforeEach(function() {
+            first = element(by.model('first'));
+            second = element(by.model('second'));
+            goButton = element(by.id('gobutton'));
+        });
+
+        it('should start out with an empty memory', function () {
+            var memory =element.all(by.repeater('result in memory'));
+
+            expect(memory.count()).toEqual(0);
+        });
+
+        it('should fill the memory with past results', function() {
+            first.sendKeys(1);
+            second.sendKeys(1);
+            goButton.click();
+
+            first.sendKeys(10);
+            second.sendKeys(20);
+            goButton.click();
+
+            var memory = element.all(by.repeater('result in memory').column('result.value'));
+            memory.then(function (arr) {
+                expect(arr.length).toEqual(2);
+                expect(arr[0].getText()).toEqual('30'); // 10 + 20 = 30
+                expect(arr[1].getText()).toEqual('2'); // 1 + 1 = 2
+            });
+        },10000); // limit before timeout
+    });
+});</file>
+   <file type="javascript" name="calcCtrl.js">var CalcCtrl = function($timeout, $scope) {
+   $scope.memory = [];
+   $scope.latest = 0;
+   $scope.operators = {
+       ADDITION: '+',
+       SUBTRACTION: '-',
+       MULTIPLICATION: '*',
+       DIVISION: '/',
+       MODULO: '%'
+   };
+   $scope.operator = $scope.operators.ADDITION;
+
+   $scope.doAddition = function() {
+    var times = 5;
+    $scope.latest = '. ';
+    $timeout(function tickslowly() {
+        if (times == 0) {
+           var latestResult;
+           var first = parseInt($scope.first);
+           var second = parseInt($scope.second);
+           switch ($scope.operator) {
+               case '+':
+               latestResult = first + second;
+               break;
+               case '-':
+               latestResult = first - second;
+               break;
+               case '*':
+               latestResult = first * second;
+               break;
+               case '/':
+               latestResult = first / second;
+               break;
+               case '%':
+               latestResult = first % second;
+               break;
+           }
+           $scope.memory.unshift({
+               timestamp: new Date(),
+               first: $scope.first,
+               operator: $scope.operator,
+               second: $scope.second,
+               value: latestResult
+           });
+            $scope.first = $scope.second = '';
+            $scope.latest = latestResult;
+        } else {
+            $scope.latest += '. ';
+            times--;
+            $timeout(tickslowly, 300);
+        }
+    }, 300);
+   };
+};
+//var calculator = angular.module('calculator', []);</file>
+    <file type="html" name="calc.html">&lt;div ng-controller="CalcCtrl" class="container"&gt;
+    &lt;div&gt;
+        &lt;h3&gt;Super Calculator&lt;/h3&gt;
+        &lt;form class="form-inline"&gt;
+            &lt;input ng-model="first" type="text" class="input-small"/&gt;
+            &lt;select ng-model="operator" class="span1"
+            ng-options="value for (key, value) in operators"&gt;
+            &lt;/select&gt;
+            &lt;input ng-model="second" type="text" class="input-small"/&gt;
+            &lt;button ng-click="doAddition()" id="gobutton" class="btn"&gt;Go!&lt;/button&gt;
+            &lt;h2&gt;{{latest}}&lt;/h2&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+    &lt;h4&gt;History&lt;/h4&gt;
+    &lt;table class="table"&gt;
+        &lt;thead&gt;&lt;tr&gt;
+            &lt;th&gt;Time&lt;/th&gt;
+            &lt;th&gt;Expression&lt;/th&gt;
+        &lt;th&gt;Result&lt;/th&gt;
+        &lt;/tr&gt;&lt;/thead&gt;
+        &lt;tr ng-repeat="result in memory"&gt;
+            &lt;td&gt;{{result.timestamp | date:'mediumTime'}}&lt;/td&gt;
+            &lt;td&gt;
+                &lt;span&gt;{{result.first}}&lt;/span&gt;
+                &lt;span&gt;{{result.operator}}&lt;/span&gt;
+                &lt;span&gt;{{result.second}}&lt;/span&gt;
+            &lt;/td&gt;
+            &lt;td&gt;{{result.value}}&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</file>
+    </editor>
+
+<p contenteditable></p></div>

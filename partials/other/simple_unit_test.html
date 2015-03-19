@@ -1,0 +1,41 @@
+<div class="bloc-content text-content">
+    <ul>
+        <li>Testing a simple Controller</li>
+        <li>Reminders</li>
+        <ul>
+            <li>No DOM Manipulation in controller</li>
+            <li>Don't use the global namespace for controller</li>
+        </ul>
+    </ul>
+    <editor editor-options="{showPreview:false , showTabs:true , compileCode:false , height:400 }">
+        <file type="javascript" name="passwordController.js">angular.module('myControllerApp')
+    .controller('PasswordCtrl',function($scope) {
+        $scope.password = '';
+        $scope.grade = function() {
+           var size = $scope.password.length;
+            if (size > 8) {
+                $scope.strength = 'strong';
+            } else if (size > 3) {
+                $scope.strength = 'medium';
+            } else {
+                $scope.strength = 'weak';
+            }
+        };
+    });
+        </file>
+        <file type="javascript" name="passwordCtrlSpec.js">describe('My simple controllers application', function() {
+    beforeEach(module('myControllerApp'));
+
+    describe('The grade function', function(){
+        it('should evaluate the strength of the password', inject(function($controller) {
+            var $scope = {};
+            var pc = $controller('PasswordCtrl', { $scope: $scope });
+            $scope.password = 'abc';
+            $scope.grade();
+            expect($scope.strength).toEqual('weak');
+         }));
+    });
+});
+        </file>
+        </editor>
+<p contenteditable></p></div>

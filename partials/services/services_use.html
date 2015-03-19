@@ -1,0 +1,21 @@
+	<div class="bloc-content text-content">
+		<ul>
+			<li>Inject it as a parameter in the dependent object (controller, service, directive)...</li>
+			<li>... And Angular dependency injection system will take care of the rest.</li>
+			<li>It will handle service instantiation and dependencies resolution for you.</li>
+			<li><i>Warning</i>: The array notation allows to identify services in case you minify your js files,
+			it's a good practice to use it</li>
+			<li>You can also use the <i>nodejs</i> plugin <a href="https://github.com/olov/ng-annotate" target=”_blank”>ng-annotate</a>,
+				which will add dependency injection annotations for you.</li>
+		</ul>
+
+<editor editor-options="{showPreview:false , showTabs:true , height:140 }">
+	<file type="javascript" name="controllers.js">
+angular.module('myModule',[])
+.controller('myController', ['$scope', 'myService', function($scope, myService){
+	$scope.myVar= myService.doJob();
+}])
+v</file>
+</editor>
+
+<p contenteditable></p></div>

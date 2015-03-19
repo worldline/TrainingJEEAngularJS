@@ -1,0 +1,76 @@
+	<div class="bloc-content text-content">
+	
+<editor editor-options="{showPreview:false , compileCode:false ,showTabs:true , height:600 }">
+<file type="javascript" name="UserCtrl.js">angular.module('testingController')
+    .controller('UserCtrl',function($scope) {
+        $scope.users = [
+            { "firstName": "Joe", "lastName": "Dalton" },
+            { "firstName": "William", "lastName": "Dalton" },
+            { "firstName": "Jack", "lastName": "Dalton" },
+            { "firstName": "Averell", "lastName": "Dalton" }
+        ];
+
+        $http.get('/api/roles').success(function(data) {
+            $scope.roles = data;
+        });
+
+        $scope.userName = "Dalton";
+    });</file>
+<file type="javascript" name="unit/userSpec.js">describe('Tests Controllers Application', function() {
+    describe('UserCtrl',function(){
+	    var scope, ctrl, $httpBackend;
+
+        //load our app module
+        beforeEach(module('testingController'));
+
+        // $httpBackend is in module ngMock (angular-mock.js)
+        // inject() is used to inject services in our function. (ignores leading and trailing underscores)
+        beforeEach(inject(function($rootScope, $controller, _$httpBackend_) {
+            $httpBackend = _$httpBackend_;
+            scope = $rootScope.$new();
+
+            $httpBackend.when('GET', '/api/roles')
+                .respond([ "user", "admin" ]);
+
+            ctrl = $controller('UserCtrl',{$scope: scope, $http: $http});
+        }));
+
+        it('should have 4 users', function() {
+            // toBe: compare if x and y are the same object.
+            expect(scope.users.length).toBe(4);
+        });
+
+        it('should set default user name.', function() {
+            // toMatch: compare a string/regular expression.
+            expect(scope.userName).toMatch('Dalton');
+        });
+
+        it('should return a list of roles.', function() {
+            // Creates a new request expectation for GET requests.
+            // See also expectPOST, expectPUT, etc.
+            $httpBackend.expectGET('api/roles');
+
+            // Simulates the response returning from the backend.
+            // Calls the success function bound to the http request.
+            $httpBackend.flush();
+
+            // Tests the result of the $http service.
+            expect(scope.roles[0]).toMatch("user");
+            expect(scope.roles[1]).toMatch("admin");
+        });
+    });
+});</file>
+<file type="javascript" name="e2e/userSpec.js">describe("UserCtrl e2e Tests", function() {
+
+	it('should have a users page with a users list.', function() {
+		browser.get('#/users');
+        var ngBindLink = element(by.css('.btnAddUser'));
+        ngBindLink.click();
+
+        var pageBody = element(by.css('h1'));
+        expect(pageBody.getText()).toEquals('Add User');
+    });
+});</file>
+</editor>
+        <p contenteditable></p>
+	</div>

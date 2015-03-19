@@ -1,0 +1,99 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li style="font-size: 20px"><span class="text-red">Exercise</span>: Finish the survey application! Remaining tasks are listed in the
+			controller.</li>
+	</ul>
+		
+<editor-vertical editor-options="{showPreview:true,showTabs:true,height:400}">
+<file type="html" name="survey.html">&lt;div ng-controller="SurveyCtrl"&gt;
+
+&lt;h3&gt;Survey application&lt;/h3&gt;
+
+&lt;form name="formSurvey"&gt;
+	Name: &lt;input type="text"/&gt;&lt;br/&gt; &lt;br/&gt;
+	
+	&lt;button class="btn"&gt;Submit poll&lt;/button&gt;
+&lt;/form&gt;&lt;/div&gt;</file>
+<file type="javascript" name="surveyCtrl.js">var SurveyCtrl = function($scope) {
+
+	$scope.categories = [ 'Theory', 'Exercices', 
+		'Documentation', 'Trainer' ];
+	$scope.notes = [ 1, 2, 3, 4 ];
+	
+	$scope.survey = {};
+	for (var index = 0; index &lt; 
+		$scope.categories.length; index++) {
+		var category = $scope.categories[index];
+		$scope.survey[category] = 3;
+	}
+	
+	// TODO: One form line per category, 
+	// with one radio button per note.
+	// TODO: Note of 2 or less displays a 
+	// mandatory text input.
+	// TODO: Note of 2 or less is 
+	// disabled for Trainer category.
+};</file>
+</editor-vertical>
+	<p contenteditable></p>
+</div>
+
+<!--
+
+solution simple
+
+<div ng-controller="SurveyCtrl">
+
+<h3>Survey application</h3>
+
+<form name="formSurvey">
+	Name: <input ng-required="true" type="text"/><br/> <br/>
+	
+	<div ng-repeat="category in categories">
+		{{category}}:
+		<span ng-repeat="note in notes">
+			{{note}}
+			<input type="radio" value="{{note}}" ng-model="survey[category]"
+				ng-disabled="note < 3 && category == 'Trainer'"/>
+		</span>
+		<input type="text" placeholder="Comment..."
+			ng-show="survey[category] < 3"/>
+	</div>	
+	
+	<button class="btn">Submit poll</button>
+</form>
+    
+</div>
+
+initial avec css class
+
+	<div class="col-sm-7">
+            <label></label>
+            <div class="form-control">
+                <label>
+                    <input type="radio">&nbsp;
+                </label>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-default">Submit poll</button>
+
+final avec css class
+
+<form name="formSurvey">
+	Name: <input type="text"/><br/> <br/>
+	<div class="col-sm-10" ng-repeat="cat in categories">
+            <label>{{cat}}</label>
+            <div class="col-sm-3 form-control">
+
+                <label ng-repeat="note in notes">
+                    <input type="radio" ng-model="survey[cat]"
+                    value="{{note}}" ng-disabled="survey[cat] <3 && cat == 'Trainer'"> {{note}}&nbsp;&nbsp;
+                </label>
+            </div>
+            <input class="form-control" ng-show="survey[cat] < 3" placeholder="note">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-default">Submit poll</button>
+</form>
+ -->

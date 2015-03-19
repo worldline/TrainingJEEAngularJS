@@ -1,0 +1,21 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Directives have <span class="text-red">camel cased names</span> such as <i>ngClick</i>, <i>ngBind</i>...</li>
+		<li>They can be invoked by translating the camel case name into snake case with these special 
+			characters <span class="text-red">:</span>, <span class="text-red">-</span>, or <span class="text-red">_</span>.</li>
+		<li>They also can be prefixed with <span class="text-red">x-</span> or <span class="text-red">data-</span>
+			 to make them HTML validator compliant.</li>
+		<li>Same rules for the directives parameters </li>
+	</ul>
+
+<editor editor-options="{showPreview:false , showTabs:false , height:200 }">
+    <file type="html" name="directive.html">&lt;span ng-bind="name"&gt;&lt;/span&gt;
+&lt;span ng:bind="name"&gt;&lt;/span&gt;
+&lt;span ng_bind="name"&gt;&lt;/span&gt;
+&lt;span x-ng-bind="name"&gt;&lt;/span&gt;
+&lt;span data-ng-bind="name"&gt;&lt;/span&gt;
+&lt;!-- NOT &lt;span ngBind="name"&gt;&lt;/span&gt; --&gt;
+</file>
+</editor>
+
+<p contenteditable></p></div>

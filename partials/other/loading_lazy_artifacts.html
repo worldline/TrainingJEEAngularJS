@@ -1,0 +1,144 @@
+
+	<div class="bloc-content text-content">
+		<ul>
+			<li><i>Best Practice</i>: Create a <i class="text-red">routes.js</i> file which provides the routes definition,
+				and their needed dependencies.</li>
+		</ul>
+		
+<editor editor-options="{showPreview:false , showTabs:true , compileCode:false , height:360 }">
+<file type="javascript" name="routes.js">define([], function()
+{
+    return {
+        defaultRoutePath: '/404',
+        routes: {
+            '/': {
+                templateUrl: '/templates/views/home.html',
+                controller: 'HomeController',
+                dependencies: [
+                    'controllers/HomeController'
+                ]
+            },
+            '/login': {
+                templateUrl: '/templates/views/login.html',
+                controller: 'LoginController',
+                dependencies: [
+                    'controllers/LoginController',
+                    'services/UserService'
+                ]
+            },
+            '/books': {
+                templateUrl: '/templates/views/catalog.html',
+                controller: 'CatalogController',
+                dependencies: [
+                    'controllers/CatalogController',
+                    'services/ProductUtils',
+                    'services/CatalogService'
+                ]
+            },
+            '/book/:id': {
+                templateUrl: '/templates/views/detail.html',
+                controller: 'DetailController',
+                dependencies: [
+                    'controllers/DetailController',
+                    'services/ProductUtils',
+                    'services/CatalogService'
+                ]
+            },
+            '/basket': {
+                templateUrl: '/templates/views/basket.html',
+                controller: 'BasketController',
+                dependencies: [
+                    'controllers/BasketController',
+                    'services/UserService',
+                    'services/CatalogService'
+                ]
+            },
+            '/profile': {
+                templateUrl: '/templates/views/profile.html',
+                controller: 'ProfileController',
+                dependencies: [
+                    'controllers/ProfileController'
+                ]
+            },
+            '/404': {
+                templateUrl: '/templates/views/404.html',
+                dependencies: []
+            }
+        }
+    };
+});
+</file>
+<file type="" name="app.js">define([ 'config/routes', 'services/dependencyResolver', 'lib/angular-resource' ], 
+	function(config, dependencyResolver) {
+	
+	var app = angular.module('app', [ 'ngResource' ]);
+	
+	// Application configuration
+	app.config(
+	[
+		'$controllerProvider',
+		'$compileProvider',
+		'$filterProvider',
+		'$provide',
+	
+		function($controllerProvider, $compileProvider, 
+			$filterProvider, $provide, $routeProvider)
+		{
+			// Providers are referenced in the app to be used anywhere in your application.
+			app.lazy =
+			{
+				controller : $controllerProvider.register,
+				directive : $compileProvider.directive,
+				filter : $filterProvider.register,
+				factory : $provide.factory,
+				service : $provide.service
+			};
+			
+			if(config.routes !== undefined)
+            {
+				// Registers all routes in routes.js
+                angular.forEach(config.routes, function(route, path)
+                {
+                    $routeProvider.when(path, {
+						templateUrl: route.templateUrl, 
+						controller: route.controller,
+						resolve: dependencyResolver(route.dependencies)
+                    });
+                });
+            }
+
+            if(config.defaultRoutePath !== undefined)
+            {
+                $routeProvider.otherwise({redirectTo: config.defaultRoutePath});
+            }
+		}
+	]);
+	
+	return app;
+})
+
+</file>
+<file type="javascript" name="dependencyResolver.js">/** Used in appModule, to load angular artifacts dynamically. */
+define([], function() {
+    return function(dependencies) {
+        var definition = {
+            resolver: ['$q','$rootScope', function($q, $rootScope) {
+                var deferred = $q.defer();
+                
+                // Loads dependencies.
+                require(dependencies, function() {
+                    $rootScope.$apply(function() {
+                        deferred.resolve();
+                    });
+                });
+                return deferred.promise;
+            }]
+        };
+        return definition;
+    };
+});
+
+</file>
+</editor>
+		
+	<p contenteditable></p></div>

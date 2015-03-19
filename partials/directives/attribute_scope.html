@@ -1,0 +1,14 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Defines the scope used by the directive. Several values are available:</li>
+		<ul>
+			<li><i span class="text-red">false</i>(default) : <span class="text-red">Current scope</span> is used.</li>
+			<li><i span class="text-red">true</i>: A <span class="text-red">new</span> scope is created for the
+				directive. <i>Note: Multiple directives on the same level which request a new scope will get the same.</i></li>
+			<li><i class="text-red">{}</i>: An <span class="text-red">isolate</span> scope is created, which does not inherit
+				from the parent scope. <i>Recommended when making reusable components.</i> Contains a set of local properties
+				derived from the parent scope. Use this notation to link parent scope properties to the directive
+				template properties. There are <span class="text-red">three ways</span> to declare local properties.</li>
+		</ul>
+	</ul>
+<p contenteditable></p></div>

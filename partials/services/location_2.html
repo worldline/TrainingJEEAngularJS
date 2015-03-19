@@ -1,0 +1,27 @@
+
+	<div class="bloc-content text-content">
+
+<editor editor-options="{showPreview:true , showTabs:true, height:300 }" >
+    <file type="html" name="location.html">&lt;div ng-controller="LocationCtrl"&gt;
+    Current url is : &lt;i&gt;{{currentURL}}&lt;/i&gt;. 
+    &lt;br/&gt;
+    &lt;button class="btn" ng-click="gotoWindowSlide()"&gt;
+        Go to $window service slide
+    &lt;/button&gt;
+&lt;/div&gt;</file>
+	<file type="javascript" name="location.js">var LocationCtrl = function($scope, $location) {
+	$scope.currentURL = $location.url();
+	
+	$scope.gotoWindowSlide = function() {
+		$location.path("/services/window");
+	};
+
+	$scope.$watch(
+		function(){return $location.url();}, 
+		function(newValue, oldValue){console.log(newValue);}
+	);	
+};
+</file>
+</editor>
+
+	<p contenteditable></p></div>

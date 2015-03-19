@@ -1,0 +1,32 @@
+
+	<div class="bloc-content text-content">
+		<ul>
+			<li>Instead of registering a factory function that returns an instance of a service,
+				you could also register a constructor function for your service object using the
+				<i class="text-red">service(name, constructor)</i> method.</li>
+		</ul>
+		
+<editor editor-options="{showPreview:false , showTabs:false , height:400 }">
+	<file type="javascript" name="services.js">var appServices = angular.module('ecommerce.services', []);
+
+var UserService = function() {
+	var currentUser;
+
+    this.login = function(login,password){
+        //code here...
+    };
+    this.register = function(newUser){
+        //code here...
+    }
+};	
+
+appServices.service('UserService', UserService);
+
+//similar to
+
+appServices.factory('UserService',function(){
+    return new UserService();
+});</file>
+</editor>
+		
+	<p contenteditable></p></div>

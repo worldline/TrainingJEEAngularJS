@@ -1,0 +1,41 @@
+
+	<div class="bloc-content text-content">
+
+<editor editor-options="{showPreview:false , showTabs:true , height:400 , compileCode:false }">
+<file type="html" name="index.html">&lt;html ng-app="phonecat"&gt;
+	&lt;head/&gt;
+	&lt;body&gt;
+		&lt;header/&gt;
+		&lt;div ng-view&gt;&lt;/div&gt;
+		&lt;footer/&gt;
+		
+		&lt;script src="lib/angular/angular.js"&gt;&lt;/script&gt;
+		&lt;script src="js/app.js"&gt;&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</file>
+<file type="javascript" name="app.js">angular.module('phonecat', []).
+	config(['$routeProvider', function($routeProvider) {
+		$routeProvider.when('/phones', {
+			templateUrl: 'partials/phone-list.html', 
+			controller: PhoneListCtrl
+			})
+			.when('/phones/:phoneId', {
+				templateUrl: 'partials/phone-detail.html', 
+				controller: PhoneDetailCtrl
+			})
+			.otherwise({
+				redirectTo: '/phones'
+			});
+	}]);
+</file>
+<file type="javascript" name="listen.js">
+var myCtrl= function($scope, $log){
+	$scope.$on('$routeChangeStart', function(event, next, current) {
+		$log.info('next route:' + next);
+    });	
+}
+</file>
+</editor>
+
+	<p contenteditable></p></div>

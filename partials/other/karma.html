@@ -1,0 +1,28 @@
+<div class="bloc-content text-content">
+	<ul class="small">
+		<li><i class="text-red">Karma</i> is a <span class="text-red">javascript test runner</span>, which runs on <i class="text-red">Node.js</i>.</li>
+		<li>Works by opening <span class="text-red">each browser specified in its configuration file</span>,
+			and by running Javascript tests in these browsers.</li>
+		<li>Communication between Karma and each of the browsers is handled with a service
+			running in the terminal using <i class="text-red">socket.io</i>.</li>
+		<li>Very <span class="text-red">fast</span>!!!</li>
+	</ul>
+
+<editor editor-options="{showPreview:false , compileCode:false , theme:'terminal' , height:260 }">
+<file type="ini" name="app.js">
+# Install Karma:
+$ npm install karma --save-dev
+
+# Install plugins that your project needs:
+$ npm install karma-jasmine karma-chrome-launcher --save-dev
+
+# Run Karma:
+$ ./node_modules/karma/bin/karma start
+
+# For our Practical Works, just use:
+&gt; grunt test:unit
+</file>
+</editor>
+    <p contenteditable></p>
+</div>
+<div class="right-header"><img src="images/68444ed0.karma.png" class="back-image" width="300" /></div>

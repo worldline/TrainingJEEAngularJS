@@ -1,0 +1,19 @@
+
+	<div class="bloc-content text-content">
+		<ul>
+			<li>Exactly like <em>value</em>, except that it is available during the config phase.</li>
+		</ul>
+		
+		<img src="images/1abaf5ad.constant.png" width="380" class="back-image"/>
+		
+<editor editor-options="{showPreview:false , showTabs:false , height:240 }">
+	<file type="javascript" name="services.js">
+angular.module('myModule', [])
+.constant('helloMessage', 'Hello world')
+.config(function(myServiceProvider, helloMessage) {
+	myServiceProvider.setMessage(helloMessage);
+});
+</file>
+</editor>
+		
+	<p contenteditable></p></div>

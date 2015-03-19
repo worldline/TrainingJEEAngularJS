@@ -1,0 +1,73 @@
+<div ng-controller="HttpExCtrl">
+	<div class="bloc-content text-content">
+		<ul>
+			<li><span class="text-red">Exercises</span>
+				<ol style="font-size: 20px">
+					<li>Write a function <i>getNbUsers</i>, which uses <i>$http</i>
+						service to return the content of <i>data/users.json</i> file.
+					</li>
+					<li>Create a function which use the <i>$timeout</i> service
+						to call this function after two seconds.
+					</li>
+					<li>Make a promise in the above function to return the number of results 
+						in the <i>resolve()</i> function. You can now call the function <i>asynchGetNbUsers()</i>, and get the result 
+						in a chained <i>then()</i> function, to store it in a <i>$scope.nbUsers</i> property.
+					</li>
+				</ol>
+		</ul>
+		
+<editor editor-options="{showPreview:true , showTabs:true , height:400 }">
+    <file type="html" name="http.html">&lt;div id="userPanel" ng-controller="UserCtrl"&gt;
+    There are {{nbUsers}} connected users on the website.
+&lt;/div&gt;</file>
+	<file type="javascript" name="http.js">var UserCtrl = function($scope, $timeout) {
+	
+	$scope.asynchGetNbUsers = function() {
+		// TODO: use $timeout to call getNbUsers.
+		// TODO: use a promise to return the number of users when the $http.get is finished.
+	};
+	
+	$scope.getNbUsers = function() {
+		// TODO: use $http to get data/users.json file.
+	};
+	
+	// TODO: Call $scope.asynchGetNbUsers()
+};
+
+</file>
+</editor>
+        <p contenteditable></p>
+	</div>
+	
+	<button-valid/>
+
+<!-- 
+var UserCtrl = function($scope, $timeout, $http, $q) {
+    
+    $scope.asynchGetNbUsers = function() {
+		var deferred = $q.defer();
+        $timeout(function() {
+            $scope.getNbUsers().then(function(result) {
+                console.log(result.data.length);
+            	deferred.resolve(result.data.length);
+        	}, function(reason) {
+        		deferred.reject(reason);
+        	});
+        }, 2000);
+        
+        return deferred.promise;
+	};
+	
+	$scope.getNbUsers = function() {
+		return $http.get('data/users.json');
+	};
+	
+	$scope.asynchGetNbUsers().then(function(nbUsers) {
+        $scope.nbUsers = nbUsers;
+	});
+};
+
+
+ -->
+
+</div>

@@ -1,0 +1,31 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Import <i class="text-red">Firebase</i> and <i class="text-red">AngularFire</i> scripts...</li>
+		<li>... And do not forget to add the module <i class="text-red">firebase</i> to your application dependencies.</li>
+	</ul>
+	
+<editor editor-options="{showPreview:false , showTabs:true , compileCode:false , height:320 }">
+<file type="html" name="index.html">&lt;!DOCTYPE html&gt;  
+&lt;html&gt;
+	&lt;head&gt;
+	&lt;/head&gt;
+	
+	&lt;body ng-app="app"&gt;
+		&lt;div ng-view&gt;&lt;/div&gt;
+		
+		&lt;script src="lib/firebase.js"&gt;&lt;/script&gt;
+		
+	    &lt;script src="lib/angular/angular.js"&gt;&lt;/script&gt;
+	    &lt;script src="lib/angular/angularfire.js"&gt;&lt;/script&gt;
+		
+		&lt;script src="js/app.js"&gt;&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+
+</file>
+<file type="javascript" name="app.js">var application = angular.module('app', [ 'firebase' ]);
+
+</file>
+</editor>
+	
+<p contenteditable></p></div>

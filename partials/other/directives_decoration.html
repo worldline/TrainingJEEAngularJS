@@ -1,0 +1,60 @@
+
+	<div class="bloc-content text-content">
+		<ul>
+			<li>We can do the same with directives</li>
+		</ul>
+		
+<editor editor-options="{compile:false,showPreview:false , showTabs:true , height:400, jsFiddle:true,module:'app' }">
+	<file type="javascript" name="app.js">angular.module('app', [])
+.controller('MyCtrl', function($scope) {
+    $scope.counter = 0;
+
+    $scope.updateCounter = function(){
+        $scope.counter++;
+    }
+})
+.directive("foo", function(){
+    return {
+        restrict: 'E',
+        scope: {
+            name: "@"
+        },
+        replace: true,
+        template: '&lt;div&gt;Hello, &lt;/div&gt;',
+        compile: function(tElement, tAttrs) {
+            tElement.append('&lt;div&gt;Added in compile&lt;/div&gt;');
+
+            return function(scope, element, attrs) {
+                if (angular.isDefined(attrs.name)) {
+                    attrs.name = attrs.name + "!";
+                }
+            };
+        }
+    };
+});
+
+</file>
+<file type="javascript" name="run.js">angular.module('app').config(function($provide) {
+    $provide.decorator('fooDirective', function($delegate) {
+        var directive = $delegate[0];
+
+        var compile = directive.compile;
+
+        directive.compile = function(tElement, tAttrs) {
+            var link = compile.apply(this, arguments);
+            tElement.append('&lt;div&gt;Added in the decorator&lt;/div&gt;');
+            return function(scope, elem, attrs) {
+                link.apply(this, arguments);
+                // We can extend the link function here
+            };
+        };
+    return $delegate;
+    });
+})</file>
+<file type="html" name="log.html">&lt;div ng-controller="MyCtrl"&gt;
+    &lt;foo name="Angular Tips" fn="updateCounter()"&gt;&lt;/foo&gt;
+&lt;/div&gt;
+</file>
+</editor>
+		
+	<p contenteditable></p></div>

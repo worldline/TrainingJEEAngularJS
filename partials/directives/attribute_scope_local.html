@@ -1,0 +1,37 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li><i class="text-red">@</i> or <i class="text-red">@propertyName</i>: Binds the value of a directive attribute
+			to a local scope property (<span class="text-red">one-way databinding</span>). The DOM 
+			attribute is considered a <span class="text-red">String</span>.</li>
+		<li>Click on images below</li>
+	</ul>
+
+	<ul
+		style="margin-bottom: 50px"
+		ng-init="
+			ids=['pyqt606y', '3fk3cLer/1/', 'f6g4koh6/1/', 'pyfdL978/1/'];
+			imgs=['local1', 'local2', 'local3', 'local4'];
+			displayLinks= {};
+		"
+	>
+		<li ng-repeat="img in imgs" style="display:inline-block">
+			<ul 
+				class="sublinks" ng-show="displayLinks[img]"
+				ng-mouseenter="displayLinks[img]=true"
+				ng-mouseleave="displayLinks[img]=false"
+			>
+				<li ><a ng-href="images/binding/{{img}}.jpg" target="_check">as image</a></li>
+				<li ><a ng-href="http://jsfiddle.net/{{ids[$index]}}" target="_blank">as fiddle</a></li>
+			</ul>
+			<img 
+				style="width: 200px; height: 200px; margin: 5px;" 
+				ng-src="images/binding/{{img}}.jpg"
+				ng-mouseenter="displayLinks[img]=true"
+				ng-mouseleave="displayLinks[img]=false"
+			>	
+			</img>
+		</li>
+	</ul>
+
+	<p contenteditable></p>
+</div>

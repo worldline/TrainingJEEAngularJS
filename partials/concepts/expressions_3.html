@@ -1,0 +1,14 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>All properties are searched into the <span class="text-red">$scope</span> object.</li>
+		<li>No error thrown when trying to access properties of a null/undefined object.</li>
+	</ul>
+		
+<editor editor-options="{showPreview:true , height:200 }">
+<file type="html" name="index.html">Hello, mister 
+{{{ true: currentUser.login, false: "Unknown" }[currentUser != undefined]}}&lt;br/&gt;
+You have {{currentUser.children.length}} children.
+</file>
+</editor>
+		
+<p contenteditable></p></div>

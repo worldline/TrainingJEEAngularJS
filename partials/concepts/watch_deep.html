@@ -1,0 +1,26 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li><span class="text-red">$watch</span> third parameter: <span class="text-red">objectEquality</span></li>
+		<ul>
+			<li>Compare object for equality rather than for reference.</li>
+			<li>Use it to watch nested elements in arrays or objects.</li>
+		</ul>
+			
+<editor editor-options="{showPreview:true , showTabs:true , height:220 }">
+	<file type="javascript" name="watch-ctrl.js">var WatchCtrl = function($scope) {
+	$scope.currentUser = { lastName: "Sponge", firstName: "Bob" };
+	
+	$scope.$watch('currentUser', function(newValue, oldValue) {
+		$scope.logText = "Hello : " + $scope.currentUser.firstName 
+			+ " " + $scope.currentUser.lastName;
+	}, true);
+};</file>
+    <file type="html" name="watch.html">&lt;div ng-controller="WatchCtrl"&gt;
+	&lt;input type="text" ng-model="currentUser.firstName"/&gt;
+	&lt;input type="text" ng-model="currentUser.lastName"/&gt;
+	&lt;br/&gt; {{logText}}
+&lt;/div&gt;</file>
+</editor>
+
+	</ul>
+<p contenteditable></p></div>

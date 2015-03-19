@@ -1,0 +1,414 @@
+@import "fonts.css";
+@import "code-prettify.css";
+
+body, .header, h1 {
+    margin: 0;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
+}
+
+body {
+    padding: 0;
+    overflow: hidden;
+    background-color: #F5F1DE;
+    font-family: 'Calibri', sans-serif;
+    /*line-height: 1.5;*/
+    font-size: 3.5em;
+}
+
+iframe {
+    border: none;
+}
+
+.header {
+    position: absolute;
+    left: 50px;
+    top: 30px;
+    background-color: #B40404;
+    z-index: 1;
+    padding: 13px 15px;
+    border-radius: 10px;
+}
+
+.right-header {
+    position: absolute;
+    right: 80px;
+    top: 24px;
+    background-color: #B40404;
+    z-index: 1;
+    padding: 13px 15px;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+/** editor */
+#editor {
+	font-size: 20px;
+	text-align: left;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	height: 800px;
+}
+
+.ace_scrollbar {
+    display: none !important;
+}
+
+.preview {
+	border: 1px solid;
+	background-color: #ffffff;
+	border-radius: 20px;
+	padding: 5px;
+	margin-bottom: 5px;
+	font-size: 20px;
+}
+
+.autocomplete-popup {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	cursor: pointer;
+	z-index: 1;
+	background-color: #B40404;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.suggest-doc {
+	border: 1px solid;
+	background-color: #ffffff;
+	border-radius: 5px;
+	padding: 5px;
+	font-size: 13px;
+	margin-right: 5px;
+	vertical-align: top;
+}
+
+/** End editor */
+
+/** Progress Bar */
+
+.progress-slideshow {
+	border-radius: 0;
+	cursor: pointer;
+}
+
+
+.popover {
+	border: 10px solid #B40404;
+	background-color: #F5F1DE;
+	font-size: 20px;
+}
+
+/** End Progress Bar */
+
+.center, .container {
+    text-align: center;
+}
+
+a:hover {
+    cursor: pointer;
+    color: #0000ff;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    margin-left: -58px;
+    padding: 10px;
+    z-index: 1;
+}
+
+.title {
+    color: #ffffff;
+    line-height: 1.1em;
+}
+
+.title2 {
+    font-size: 3em;
+    margin: 20px;
+    line-height: 1.1em;
+}
+
+.content_title {
+	color: #B40404;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.subtitle {
+    font-size: 2em;
+    margin: 20px;
+    line-height: 1em;
+}
+
+.item_list {
+    font-size: 2em;
+    text-align: left;
+    margin: 20px;
+}
+
+.overline-yellow {
+    background-color: #fffa00;
+
+}
+
+.overline-red {
+    background-color: #B40404;
+
+}
+
+.text-green {
+	color: #04B404;
+	font-weight: bold;
+}
+
+.text-red {
+	color: #B40404;
+	font-weight: bold;
+}
+
+.code {
+    vertical-align: middle;
+    font-size: 48px;
+    font-family: "courier new";
+    font-weight: bold;
+}
+
+.bloc {
+    color: #fff;
+    background-color: #B40404;
+    margin: 10px 125px;
+    padding: 6px 10px 3px 10px;
+    border-radius: 10px;
+}
+
+.bloc-content {
+    border: 4px #B40404 solid;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    right: 50px;
+    bottom: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.text-content {
+	padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.key-list {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 20px;
+}
+
+.key-list td, th {
+	border: 1px solid;
+	padding-left: 5px;
+}
+
+.image-content {
+	padding-top: 25px;
+}
+
+.tag2 {
+    font-size: 2em;
+    color: #fff;
+    background-color: rgba(0, 40, 50, 0.8);
+    margin: 5px 5px;
+    padding: 3px 26px;
+    border-radius: 10px;
+}
+
+.prettyprint {
+    text-align: left;
+    font-weight: 600;
+    padding: 10px;
+    border: 1px solid #578;
+    border-radius: 8px;
+}
+
+[contenteditable] {
+    background-color: white;
+    font-family: 'source code pro',sans-serif;
+    font-size: 0.5em;
+    margin: 10px;
+}
+
+
+.back-image {
+    border-radius: 15px;
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.right-triangle {
+    position: fixed;
+    bottom: 50%;
+    top: 50%;
+    right: 0;
+    float: right;
+    width: 0;
+    height: 0;
+    border-left: 40px solid #d9d9d9;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    z-index: 1;
+}
+
+.right-triangle:hover {
+    border-left: 40px solid #8c8c8c;
+}
+.left-triangle {
+    position: fixed;
+    bottom: 50%;
+    top: 50%;
+    left: 0;
+    float: left;
+    width: 0;
+    height: 0;
+    border-right: 40px solid #d9d9d9;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    z-index: 1;
+}
+
+.link {
+    color: #0000ff;
+}
+
+.left-triangle:hover {
+    border-right: 40px solid #8c8c8c;
+}
+
+li {
+	line-height: 40px;
+}
+
+ul.sublinks{
+    position: relative;
+    top: 200px;
+    height: 0;
+    border: 0;
+}
+
+ul.sublinks li{
+    display:inline-block;
+    font-size: small;
+}
+
+td {
+	vertical-align: top;
+	text-align: justify;
+}
+
+.nav {
+	margin-left: 0;
+	margin-bottom: 5px;
+	list-style: none;
+    font-size: 0.7em;
+}
+
+.nav>li>a{
+    padding: 1px 10px;
+}
+
+.contents {
+	padding-left: 70px;
+}
+
+.btnSmall {
+	font-size: .3em;
+}
+.btnBig {
+	font-size: 1em;
+}
+
+/** Form Validation */
+
+.error {
+	color: #b94a48;
+}
+
+/** Tests popup */
+
+.test-result-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -300px;
+    margin-right: 0;
+    margin-top: -220px;
+    margin-bottom: 0;
+    width: 600px;
+    height: 480px;
+    font-size: 15px;
+    z-index: 10;
+    font-family:Courier;
+    color: #CCCCCC;
+    background: #000000;
+    border: 3px double #CCCCCC;
+    padding: 10px;
+}
+
+.close-icon {
+	float: right;
+	cursor: pointer;
+}
+
+
+/* Ratings */
+p.rating {font-size: 0.75em;}
+.rating {
+	padding-left: 65px;
+	margin: 10px 0;
+}
+.rating a:link {color: #777; background: #FFF;}
+.five {
+	color: #000;
+	background: #FFF url(../images/bg_ratings.png) 0 -340px no-repeat;
+}
+.four {
+	color: #000;
+	background: #FFF url(../images/bg_ratings.png) 0 -262px no-repeat;
+}
+.three {
+	color: #000;
+	background: #FFF url(../images/bg_ratings.png) 0 -193px no-repeat;
+}
+.two {
+	color: #000;
+	background: #FFF url(../images/bg_ratings.png) 0 -127px no-repeat;
+}
+.one {
+	color: #000;
+	background: #FFF url(../images/bg_ratings.png) 0 -60px no-repeat;
+}
+.zero {
+	color: #000;
+	background: #FFF url(../images/bg_ratings.png) 0 1px no-repeat;
+}
+
+
+/* Remarks */
+
+.remarks {
+    float: right;
+    margin-right: 5px;
+    
+}
+
+.remarks-content {
+    font-size: small;
+}
+
+.remarks-content li{
+    line-height: 20px;
+}

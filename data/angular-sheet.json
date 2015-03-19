@@ -1,0 +1,360 @@
+ {
+	"js": {
+		" ": {
+			"suggestions": [
+				{
+					"name": "$scope"
+				},
+				"services"
+			]
+		}
+	},
+	"html": {
+		"$": {
+			"c": {
+				"suggestions": [
+					{
+						"name": "ng-click=\"\"",
+						"autoInsert": true,
+						"replace": true,
+						"cursorPosition": -1
+					}
+				]
+			},
+			"r": {
+				"suggestions": [
+					{
+						"name": "ng-repeat=\" in \"",
+						"autoInsert": true,
+						"replace": true,
+						"cursorPosition": -5
+					}
+				]
+			},
+			"m": {
+				"suggestions": [
+					{
+						"name": "ng-model=\"\"",
+						"autoInsert": true,
+						"replace": true,
+						"cursorPosition": -1
+					}
+				]
+			},
+			"else": {
+			
+			 }
+		},
+		"<": {
+			"suggestions": [
+				"html elements"
+			]
+		},
+		">": {
+			
+		},
+		" ": {
+			"/": {
+				"<": {
+				
+				}
+			},
+			"<": {
+				"suggestions": [
+					"directives",
+					"html attributes"
+				]
+			},
+			">": {
+			
+			}
+		},
+		"{": {
+			"{": {
+				"suggestions": [
+					"scope"
+				]
+			},
+			"else": {
+				"suggestions": [
+					{
+						"name": "{}}",
+						"autoInsert": true,
+						"replace": false,
+						"cursorPosition": -2
+					}
+				]
+			}
+		}
+	},
+	"categories": {
+		"html elements": {
+			"defaultSuffix": " ",
+			"list": {
+				"b": {
+					"suffix": "></b>",
+					"cursorPosition": -4
+				},
+				"br": {
+					"suffix": "/>"
+				},
+				"button": {
+				
+				},
+				"div": {
+				
+				},
+				"i": {
+					"suffix": "></i>",
+					"cursorPosition": -4
+				},
+				"input": {
+					"suffix": " />",
+					"cursorPosition": -2
+				},
+				"select": {
+				
+				},
+				"span": {
+					
+				},
+				"table": {
+				
+				}
+			}
+		},
+		"html attributes": {
+			"defaultSuffix": "=\"\"",
+			"defaultCursorPos": -1,
+			"defaultAddWhitespace": true,
+			"list": {
+				"id": {
+				
+				},
+				"title": {
+				
+				},
+				"class": {
+				
+				},
+				"style": {
+				
+				}
+				
+			}
+		},
+		"directives": {
+			
+			"defaultSuffix": "=\"\"",
+			"defaultCursorPos": -1,
+			"defaultAddWhitespace": true,
+			"list": {
+				"ng-app": {
+					"doc": "Use this directive to auto-bootstrap an application. Only one <b>ngApp</b> directive can be used per HTML document. The directive designates the root of the application and is typically placed at the root of the page."
+				},
+				"ng-bind": {
+					"doc": "Replaces the text content of the specified HTML element with the value of a given expression, and to update the text content when the value of that expression changes."
+				},
+				"ng-bind-html": {
+					"doc": "Creates a binding that will <i>innerHTML</i> the result of evaluating the expression into the current element in a secure way."
+				},
+				"ng-bind-html-unsafe": {
+					"doc": "Same as <i>ng-bind-html</i>, but without control on the inserted html content."
+				},
+				"ng-blur": {
+					"doc": "Specifies custom behavior on blur event."
+				},
+				"ng-change": {
+					"doc": "Evaluates given expression when user changes the input.<br/><br/><pre><code>&lt;input ng-change=\"expression\"/&gt;</code></pre>"
+				},
+				"ng-checked": {
+					"doc": "Expression evaluated when the input is checked/unchecked.<br/><br/><pre><code>&lt;input ng-checked=\"expression\"/&gt;</code></pre>"
+				},
+				"ng-class": {
+					"doc": "Sets CSS classes on HTML an element dynamically.<br/><br/><pre><code>&lt;any ng-class=\"{ btn: true, btn-active: isActive(user) }\"&gt;...&lt;/any&gt;</code></pre>"
+				},
+				"ng-click": {
+					"doc": "Allows you to specify custom behavior when element is clicked."
+				},
+				"ng-dblclick": {
+					"doc": "Specifies custom behavior on dblclick event."
+				},
+				"ng-cloak": {
+					"doc": "Used to prevent the Angular html template from being briefly displayed by the browser in its uncompiled form while your application is loading."
+				},
+				"ng-controller": {
+					"doc": "Links a part of the HTML DOM to a controller."
+				},
+				"ng-csp": {
+					"restrict": "html",
+					"doc": "Used when developing things like Google Chrome Extensions."
+				},
+				"ng-disabled": {
+					"doc": "Makes a button enabled/disabled. Resolves compatibility issues with IE8/older IEs.<br/><br/><pre><code>&lt;input ng-disabled=\"expression\"/&gt</code></pre>"
+				},
+				"ng-focus": {
+					"doc": "Specifies custom behavior on focus event.<br/><br/><pre><code>&lt;a/input/select/textarea ng-focus=\"expression\"&gt;...&lt/a/input/select/textarea&gt;</code></pre>"
+				},
+				"ng-form": {
+					"restrict": "form"
+				},
+				"ng-hide": {
+					"doc": "Shows/hides the given HTML element conditionally.<br/><br/><pre><code>&lt;div ng-hide=\"bHideDiv\"&gt;Hidden if $scope.bHideDiv == true&lt;/div&gt;</code></pre>"
+				},
+				"ng-href": {
+					"doc": "Replaces <i>href</i> used with angular expressions, to solve broken links problems when the page is loading."
+				},
+				"ng-include": {
+					"doc": "Fetches, compiles and includes an external HTML fragment.<br/><br/><pre><code>&lt;ng-include src=\"...\" onload=\"...\" autoscroll=\"...\"/&gt;</code></pre>"
+				},
+				"ng-init": {
+					"doc": "Specifies initialization tasks to be executed before the template enters execution mode during bootstrap.<br/><br/><pre><code>&lt;div ng-init=\"myVar = 10\"&gt;...&lt;/div&gt;</code></pre>"
+				},
+				"ng-if": {
+					"doc": "Removes and/or recreates a portion of the DOM tree conditionally.<br/><br/><pre><code>&lt;span ng-if=\"checked\"&gt;checked is true.&lt;/span&gt;</code></pre>"
+				},
+				"ng-list": {
+				
+				},
+				"ng-true-value": {
+				
+				},
+				"ng-false-value": {
+				
+				},
+				"ng-model": {
+					"doc": "Does two-way data binding with a form element.<br/><br/><pre><code>&lt;input ng-model=\"login\"/&gt;</code></pre>"
+				},
+				"ng-mousedown": {
+					"doc": "Specifies custom behavior on <i>mousedown</i> event."
+				},
+				"ng-mouseenter": {
+					"doc": "Specifies custom behavior on <i>mouseenter</i> event."
+				},
+				"ng-mouseleave": {
+					"doc": "Specifies custom behavior on <i>mouseleave</i> event."
+				},
+				"ng-mousemove": {
+					"doc": "Specifies custom behavior on <i>mousemove</i> event."
+				},
+				"ng-mouseover": {
+					"doc": "Specifies custom behavior on <i>mouseover</i> event."
+				},
+				"ng-mouseup": {
+					"doc": "Specifies custom behavior on <i>mouseup</i> event."
+				},
+				"ng-multiple": {
+					"restrict": "select"
+				},
+				"ng-non-bindable": {
+					"doc": "Used to make angular ignore a part of HTML.<br/><br/><pre><code>&lt;div ng-non-bindable&gt;Ignored: {{NotAScopeValue}}&lt;/div&gt;</code></pre>"
+				},
+				"ng-options": {
+				
+				},
+				"ng-pattern": {
+				
+				},
+				"ng-pluralize": {
+				
+				},
+				"ng-readonly": {
+				
+				},
+				"ng-repeat": {
+				
+				},
+				"ng-selected": {
+				
+				},
+				"ng-show": {
+				
+				},
+				"ng-src": {
+				
+				},
+				"ng-style": {
+				
+				},
+				"ng-submit": {
+				
+				},
+				"ng-switch": {
+				
+				},
+				"ng-switch-when": {
+				
+				},
+				"ng-switch-default": {
+				
+				},
+				"ng-transclude": {
+				
+				},
+				"ng-view": {
+				
+				}
+				
+			}
+		},
+		"filters": {
+		
+		},
+		"functions": {
+		
+		},
+		"services": {
+			"defaultSuffix": ".",
+			"list": {
+				"$anchorScroll": {
+					"suffix": "();",
+					"doc": "Scrolls to html anchor related in <i>$location.hash()</i>.<br/><br/><pre><code>$anchorScroll();</code></pre>"
+				},
+				"$animate": {
+				},
+				"$cacheFactory": {
+					"doc": "Constructs cache objects and gives access to them.<br/><br/><pre><code>var cache = $cacheFactory(\"cacheId\");<br/>cache.put( \"key\", \"value\");<br/></code></pre>"
+				},
+				"$compile": {
+				},
+				"$controller": {
+				},
+				"$document": {
+				},
+				"$exceptionHandler": {
+				},
+				"$filter": {
+				},
+				"$http": {
+				},
+				"$httpBackend": {
+				},
+				"$interpolate": {
+				},
+				"$locale": {
+				},
+				"$location": {
+				},
+				"$log": {
+				},
+				"$parse": {
+				},
+				"$q": {
+				},
+				"$rootElement": {
+				},
+				"$rootScope": {
+				},
+				"$templateCache": {
+				},
+				"$timeout": {
+					"doc": "Wrapper for <i>window.setTimeout</i>.<br/><br/><pre><code>$timeout(fn[, delay][, invokeApply]);</code></pre>"
+				},
+				"$window": {
+					"doc": "A reference to the browser's window object. Better than <i>window</i> for testing.<br/><br/><pre><code>$window.alert(\"Hello\");</code></pre>"
+				}
+			}
+		}
+		
+	}
+}

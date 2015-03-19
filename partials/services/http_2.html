@@ -1,0 +1,53 @@
+
+	<div class="bloc-content text-content">
+		<ul>
+			<li class="text-red">What is a promise?</li>
+			<ul>
+				<li>Uses core service <span class="text-red">$q</span>.</li>
+				<li>Used for interactions with the result of an asynchronous action.</li>
+			</ul>
+		</ul>
+		
+<editor editor-options="{showPreview:false , showTabs:false , height:530 }">
+	<file type="javascript" name="defer.js">var DeferCtrl = function($scope, $q) {
+	
+	function asynchTestData(data) {
+		//Creates a deferred object, which is a task finishing in the future.
+		var deferred = $q.defer();
+	 
+		setTimeout(function() {
+			//Since this fn executes async in a future turn of the event 
+			//loop, we need to wrap our code into an $apply call so that 
+			//the model changes are properly observed.
+			scope.$apply(function() {
+				var areDataOK = true; //TODO
+				if (areDataOK) {
+					//Promise is resolved.
+					deferred.resolve('Data are OK!');
+				} else {
+					//Promise is rejected.
+					deferred.reject('There is an error...');
+				}
+			});
+		}, 1000);
+		
+		//Promise object associated with this deferred.
+		return deferred.promise;
+	}
+	
+	//Let's use our function asynchTestData.
+	var promise = asynchTestData('data');
+	promise.then(function(result) {
+		//result = 'Data are OK!'
+	}, function(reason) {
+		//reason = 'There is an error...';
+	});
+};
+</file>
+</editor>
+
+	<ul>
+		<li>Promises can be chained: <i>promiseB = promiseA.then(function(result) { ... });</i></li>
+	</ul>
+
+	<p contenteditable></p></div>

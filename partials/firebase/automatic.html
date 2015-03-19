@@ -1,0 +1,53 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>You can use the function <i class="text-red">angularFire(ref, jsObject, jsProperty)</i> to bind your model
+			to Firebase. Every local change will be sent to <i>Firebase</i>, and remote changes will update the local model as well.</li>
+	</ul>
+	
+	
+<editor-vertical editor-options="{showPreview:true, showTabs:true, height:320}">
+<file type="html" name="chat.html">&lt;div ng-controller="ChatController"&gt;
+	&lt;input type="text" ng-model="message"/&gt;
+	&lt;button class="btn" ng-click="sendMsg()"&gt;
+		Send
+	&lt;/button&gt;
+	&lt;br/&gt;
+	&lt;button class="btn" ng-click="removeAll()"&gt;
+		Remove all
+	&lt;/button&gt; 
+	&lt;button class="btn" ng-click="removeFirst()"&gt;
+		Remove first
+	&lt;/button&gt;
+	&lt;br/&gt;
+	&lt;div ng-repeat="msg in messages"&gt;{{msg}}&lt;/div&gt;
+&lt;/div&gt;
+
+</file>
+<file type="javascript" name="ChatController.js">var ChatController = function($scope, angularFire) {
+	
+	// Get messages property from a Firebase url.
+	var ref = new Firebase(
+		"https://angular-training.firebaseio.com/messages");
+	
+	// Bind Firebase to a scope property.
+	angularFire(ref, $scope, "messages");
+	
+	$scope.sendMsg = function() {
+		$scope.messages.push($scope.message);
+	};
+	
+	$scope.removeAll = function() {
+		$scope.messages = [];
+	};
+	
+	$scope.removeFirst = function() {
+		if ($scope.messages.length &gt; 0) {
+			$scope.messages.splice(0, 1);
+		}
+	};
+};
+
+</file>
+</editor-vertical>
+
+<p contenteditable></p></div>

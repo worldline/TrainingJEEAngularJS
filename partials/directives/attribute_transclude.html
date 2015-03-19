@@ -1,0 +1,31 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Compiles the content of the element and make it available to the directive. Typically 
+			used with <i class="text-red">ngTransclude</i>.</li>
+	</ul>
+		
+<editor editor-options="{showPreview:false , showTabs:true , height:265, jsFiddle:true, module:'app' }">
+	<file type="javascript" name="rating.js">angular.module('app',[])
+.directive('starRating', function () {
+    return {
+		restrict: 'A, E',
+		transclude: true,
+		template: '&lt;b&gt;Directive template content ' + 
+			'&lt;div ng-transclude&gt;Content: &lt;/div&gt; &lt;/b&gt;',
+		compile: function (tElement, tAttrs, transclude) {
+			transclude(function (clone) {
+				// transform template DOM...
+			});
+		}
+    };
+});
+</file>
+<file type="html" name="rating.html">&lt;div&gt;
+	&lt;span star-rating&gt;
+		&lt;i&gtLet's create a directive!&lt;/i&gt;
+	&lt;/span&gt;
+&lt;/div&gt;
+</file>
+</editor>
+
+<p contenteditable></p></div>

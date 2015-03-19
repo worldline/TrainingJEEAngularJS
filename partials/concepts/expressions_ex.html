@@ -1,0 +1,41 @@
+<div ng-controller="ExpressionsExCtrl">
+	<div class="bloc-content text-content">
+		<ul>
+			<li><span class="text-red">Exercises</span>
+			<ol>
+				<li>Replace the <i>???</i> with the correct expressions, using <i>price</i> and <i>qty</i>.</li>
+				<li>Same as <i>1</i>, with a <i>product</i> object, which contains price and quantity informations.</li>
+			</ol>
+		</ul>
+		
+<editor editor-options="{showPreview:true , height:220 }">
+<file type="html" name="index.html">&lt;table class="key-list" id="products" ng-init="price=50; qty=3"&gt;
+	&lt;tr&gt;&lt;td&gt;Product name&lt;/td&gt;&lt;td&gt;Price&lt;/td&gt;&lt;td&gt;Qty&lt;/td&gt;&lt;td&gt;Total&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;AngularJS book for newbies&lt;/td&gt;
+		&lt;td id="price"&gt;???&lt;/td&gt;
+		&lt;td id="qty"&gt;???&lt;/td&gt;
+		&lt;td id="total"&gt;???&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</file>
+</editor>
+        <p contenteditable></p>
+	</div>
+	
+	<button-valid/>
+</div>
+
+<!--
+
+<table class="key-list" id="products" ng-init="article={price:50, qty:3}">
+	<tr><td>Product name</td><td>Price</td><td>Qty</td><td>Total</td></tr>
+	<tr>
+		<td>AngularJS book for newbies</td>
+		<td id="price">{{article.price}}</td>
+		<td id="qty">{{article.qty}}</td>
+		<td id="total">{{article.price * article.qty}}</td>
+	</tr>
+</table>
+
+-->

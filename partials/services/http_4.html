@@ -1,0 +1,18 @@
+	<div class="bloc-content text-content">
+		<ul>
+			<li class="text-red">Setting HTTP Headers</li>
+			<ul>
+				<li>For <span class="text-red">all</span> requests:</li>
+				<ul>
+					<li><i>$httpProvider.defaults.headers.common</i> (common for all requests).</li>
+					<li><i>$httpProvider.defaults.headers.post</i> (POST requests).</li>
+					<li><i>$httpProvider.defaults.headers.put</i> (PUT requests).</li>
+				</ul>
+				<li>For <span class="text-red">one</span> request:</li>
+				<ul>
+					<li><i>$http.get('/users', <span class="text-red">{headers: {'Authorization': 'Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=='}}</span>);</i></li>
+				</ul>
+			</ul>
+		</ul>
+		
+<p contenteditable></p></div>

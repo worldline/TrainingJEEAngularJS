@@ -1,0 +1,30 @@
+<div class="bloc-content text-content">
+<ul>
+		<li>HTML <i>select</i> element with angular data-binding.</li>
+		<li>Attribute <i class="text-red">ngOptions</i> can be used to dynamically 
+			generate a list of <i class="text-red">&lt;option&gt;</i> elements.</li>
+	</ul>
+
+<editor editor-options="{showPreview:true , showTabs:true , height:220 }">
+    <file type="html" name="select.html">&lt;div ng-controller="SelectCtrl"&gt;
+    &lt;select ng-model="user" 
+    	ng-options="user.name group by user.country for user in users"&gt;
+    	&lt;option value=""&gt;-- Choose user --&lt;/option&gt;
+    &lt;/select&gt;
+    
+    Selected: {{user}}
+&lt;/div&gt;</file>
+	<file type="javascript" name="select.js">var SelectCtrl = function($scope) {
+	$scope.users = [
+		{ id: 1, name:'Bob', country:'France'},
+		{ id: 2, name:'Bill', country:'England'},
+		{ id: 3, name:'Luc', country:'France'},
+		{ id: 4, name:'Joe', country:'France'},
+		{ id: 5, name:'Matt', country:'Spain'}
+	];
+}</file>
+</editor>
+<p contenteditable></p>
+</div>
+
+<!-- "user.id as user.name group by user.country for user in users" -->

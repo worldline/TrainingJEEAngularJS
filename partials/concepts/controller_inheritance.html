@@ -1,0 +1,39 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Controller inheritance is base on <span class="text-red">$scope</span> inheritance.</li>
+	</ul>
+		
+<editor editor-options="{showPreview:true , showTabs:true , height:350 }">
+	<file type="javascript" name="controllers.js">function ParentCtrl($scope) {
+	$scope.firstName = 'Bart';
+}
+ 
+function ChildCtrl($scope) {
+	$scope.firstName = 'Bob';
+	$scope.lastName = 'Sponge';
+}
+ 
+function BabyCtrl($scope) {
+	$scope.lastName="Marley";
+}
+
+function CommonCtrl(){
+        this.lastName = "Dylan";
+}</file>
+    <file type="html" name="controllers.html">&lt;div style="border: solid 2px" ng-controller="ParentCtrl"&gt;
+	&lt;p&gt;Hello from Parent, {{firstName + " " + lastName}}&lt;/p&gt;
+	
+	&lt;div style="border: solid red 2px" ng-controller="ChildCtrl"&gt;
+		&lt;p&gt;Hello from Child, {{firstName + " " + lastName}}&lt;/p&gt;
+		
+		&lt;div style="border: solid yellow 2px" ng-controller="BabyCtrl"&gt;
+			&lt;p&gt;Hello from Baby, {{firstName + " " + lastName}}&lt;/p&gt;
+		&lt;/div&gt;
+        &lt;div style="border: solid green 2px" ng-controller="CommonCtrl as ctrl"&gt;
+        &lt;p&gt;Hello from Common, {{ctrl.firstName + " " + ctrl.lastName}}&lt;/p&gt;
+        &lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</file>
+</editor>
+
+<p contenteditable></p></div>

@@ -1,0 +1,30 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Defines a controller for the directive. Can be shared with other directives, using <i class="text-red">
+			require</i> attribute. Can have optional following parameters:</li>
+		<ol>
+			<li><i class="text-red">$scope</i>: Directive scope.</li>
+			<li><i class="text-red">$element</i>: Directive element.</li>
+			<li><i class="text-red">$attrs</i>: Element attributes.</li>
+			<li><i class="text-red">$transclude</i>: Transclude function.</li>
+		</ol>
+	</ul>
+		
+<editor editor-options="{showPreview:false , showTabs:true , height:280, jsFiddle:true, module:'app' }">
+<file type="javascript" name="loginForm.js">angular.module('app',[]).directive('loginForm', function() {
+	return {
+		template: "&lt;input type=\"text\" ng-model=\"login\" /&gt; {{login}}",
+		controller: function($scope, $element, $attrs, $transclude) {
+			return new LoginFormCtrl($scope);
+		}
+	};
+})
+var LoginFormCtrl = function(scope) {
+	scope.login = "Bob Sponge";
+};</file>
+<file type="html" name="login.html">&lt;div login-form&gt;&lt;/div&gt;
+
+</file>
+</editor>
+
+<p contenteditable></p></div>

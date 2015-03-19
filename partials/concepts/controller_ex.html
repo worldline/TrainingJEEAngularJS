@@ -1,0 +1,89 @@
+<div ng-controller="ControllerExCtrl">
+	<div class="bloc-content text-content">
+		<ul>
+			<li><span class="text-red">Exercise</span>: Complete the <i>user.js</i> file by linking 
+				the controllers to the appropriate HTML elements.</li>
+		</ul>
+			
+<editor editor-options="{showPreview:true , showTabs:true , height:400 }">
+<file type="html" name="user.html">&lt;div id="mainApp"&gt;
+	Hello, {{currentUser.login}}
+	&lt;tabset&gt;
+		&lt;tab heading="Mails"&gt;
+			&lt;div&gt;You have {{nbMails}} mail(s) in your box.&lt;/div&gt;
+		&lt;/tab&gt;
+		&lt;tab heading="Profile"&gt;
+			&lt;div&gt;
+				&lt;input type="text" id="inputLogin" ng-model="tmpLogin"/&gt;
+				&lt;button class="btn"&gt;Change login&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/tab&gt;
+	&lt;/tabset&gt;
+&lt;/div&gt;
+</file>
+<file type="javascript" name="user.js">var MainCtrl = function($scope) {
+	$scope.currentUser = { login: "BobSponge", 
+		mail: "sponge@water.bloub", mails: null };
+};
+
+var MailCtrl = function($scope) {
+	// Gets all user mails.
+	$scope.currentUser.mails = [ { id: 1, content: "Test" }]; // TODO
+	
+	$scope.nbMails = $scope.currentUser.mails.length;
+};
+
+var EditCtrl = function($scope) {
+	$scope.tmpLogin = $scope.currentUser.login;
+	
+	$scope.editLogin = function() {
+		// TODO: update login.
+	};
+};
+
+</file>
+</editor>
+        <p contenteditable></p>
+	</div>
+	
+	<button-valid/>
+	
+</div>
+
+<!--
+<div id="mainApp" ng-controller="MainCtrl">
+	Hello, {{currentUser.login}}
+	<tabset>
+		<tab heading="Mails" ng-controller="MailCtrl">
+			<div>You have {{nbMails}} mail(s) in your box.</div>
+		</tab>
+		<tab heading="Profile">
+			<div ng-controller="EditCtrl">
+				<input type="text" id="inputLogin" ng-model="tmpLogin"/>
+				<button class="btn" ng-click="editLogin()">Change login</button>
+			</div>
+		</tab>
+	</tabset>
+</div>
+
+
+var MainCtrl = function($scope) {
+	$scope.currentUser = { login: "BobSponge", 
+		mail: "sponge@water.bloub", mails: null };
+};
+
+var MailCtrl = function($scope) {
+	// Gets all user mails.
+	$scope.currentUser.mails = [ { id: 1, content: "Test" }]; // TODO
+	
+	$scope.nbMails = $scope.currentUser.mails.length;
+};
+
+var EditCtrl = function($scope) {
+	$scope.tmpLogin = $scope.currentUser.login;
+	
+	$scope.editLogin = function() {
+		$scope.currentUser.login= $scope.tmpLogin;
+	};
+};
+-->

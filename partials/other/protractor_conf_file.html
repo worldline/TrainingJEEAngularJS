@@ -1,0 +1,75 @@
+<div class="bloc-content text-content">
+
+    <editor editor-options="{showPreview:false , showTabs:false , compileCode:false , height:580 }">
+        <file type="javascript" name="protractor.conf.js">// An example configuration file.
+exports.config = {
+    // The location of the selenium standalone server .jar file.
+    // http://docs.seleniumhq.org/download/
+    seleniumServerJar: './script/selenium-server-standalone-2.40.0.jar',
+
+    // The port to start the selenium server on, or null if the server should
+    // find its own unused port.
+    seleniumPort: 4444,
+
+
+    //For Windows
+    //chromeDriver: './script/Chromedriver.exe',
+    // For Linux or OSX
+    chromeDriver: './script/Chromedriver',
+
+    // Additional command line options to pass to selenium. For example,
+    // if you need to change the browser timeout, use
+    // seleniumArgs: ['-browserTimeout=60'],
+    seleniumArgs: [],
+
+            // Capabilities to be passed to the webdriver instance.
+    capabilities: {
+        'browserName': 'chrome'
+    },
+
+    // Spec patterns are relative to the current working directly when
+    // protractor is called.
+    specs: ['e2e/*Spec.js'],
+
+    // A base URL for your application under test. Calls to protractor.get()
+    // with relative paths will be prepended with this.
+    baseUrl: 'http://localhost:9000',
+
+    // Selector for the element housing the angular app - this defaults to
+    // body, but is necessary if ng-app is on a descendant of <body>
+    rootElement: 'body',
+
+    // A callback function called once protractor is ready and available, and
+    // before the specs are executed
+    // You can specify a file containing code to run by setting onPrepare to
+    // the filename string.
+    onPrepare: function() {
+        require('jasmine-reporters');
+        jasmine.getEnv().addReporter(
+            new jasmine.JUnitXmlReporter('xmloutput', true, true));
+
+        var disableNgAnimate = function(){
+            angular.module('disableNgAnimate',[]).run(function($animate){
+                $animate.enabled(false);
+            });
+        };
+
+        browser.addMockModule('disableNgAnimate',disableNgAnimate);
+    },
+    // Options to be passed to Jasmine-node.
+    jasmineNodeOpts: {
+        // onComplete will be called just before the driver quits.
+        onComplete: null,
+        // If true, display spec names.
+        isVerbose: false,
+        // If true, print colors to the terminal.
+        showColors: true,
+        // If true, include stack traces in failures.
+        includeStackTrace: true,
+        // Default time to wait in ms before a test fails.
+        defaultTimeoutInterval: 30000
+    }
+};</file>
+    </editor>
+
+<p contenteditable></p></div>

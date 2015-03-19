@@ -1,0 +1,70 @@
+
+	<div class="bloc-content text-content">
+		<ul>
+			<li>Tested with <span class="text-red">Midway testing</span>: checking in the executed code if modules are
+				accessible in Angular.</li>
+		</ul>
+		
+<editor editor-options="{showPreview:false , compileCode:false , height:380 }">
+<file type="javascript" name="appSpec.js">// test/midway/appSpec.js
+describe("App Module", function() {
+
+	var module;
+	
+	// Loads the main application module before each test.
+	before(function() {
+		module = angular.module("App");
+	});
+	
+	// Checks if the main module is registered.
+	it("should be registered", function() {
+		expect(module).not.toEqual(null);
+	});
+	
+	// Checks if sub-modules have been registered.
+	describe("Dependencies:", function() {
+
+		var deps;
+		var hasModule = function(m) {
+			return deps.indexOf(m) &gt;= 0;
+		};
+		
+		before(function() {
+			deps = module.value('appName').requires;
+		});
+
+		//you can also test the module's dependencies
+		it("should have App.Controllers as a dependency", function() {
+			expect(hasModule('App.Controllers')).toEqual(true);
+		});
+
+		it("should have App.Directives as a dependency", function() {
+			expect(hasModule('App.Directives')).toEqual(true);
+		});
+
+		it("should have App.Filters as a dependency", function() {
+			expect(hasModule('App.Filters')).toEqual(true);
+		});
+
+		it("should have App.Routes as a dependency", function() {
+			expect(hasModule('App.Routes')).toEqual(true);
+		});
+
+		it("should have App.Services as a dependency", function() {
+			expect(hasModule('App.Services')).toEqual(true);
+		});
+		
+		it("should have firebase as a dependency", function() {
+			expect(hasModule('firebase')).toEqual(true);
+		});
+		
+		it("should have localize as a dependency", function() {
+			expect(hasModule('localize')).toEqual(true);
+		});
+	});
+});
+
+</file>
+</editor>
+		
+	<p contenteditable></p></div>

@@ -1,0 +1,81 @@
+
+	<div class="bloc-content text-content">
+
+<editor editor-options="{showPreview:false , compileCode:false , height:470 }">
+<file type="javascript" name="app.js">angular.module('app', [])
+.config(['$routeProvider', '$httpProvider', 'Roles',
+	function ($routeProvider, $httpProvider, roles) {
+		
+	// Routes configuration.
+	$routeProvider
+		.when('/', {
+			templateUrl: '/partials/home',
+			controller: 'HomeCtrl',
+			access: roles.user
+		}).when('/login', {
+			templateUrl: '/partials/login',
+			controller: 'LoginCtrl',
+			access: roles.none
+		}).when('/register', {
+			templateUrl: '/partials/register',
+			controller: 'RegisterCtrl',
+			access: roles.none
+		}).when('/profile', {
+			templateUrl: '/partials/private',
+			controller: 'PrivateCtrl',
+			access: roles.user
+		}).when('/admin', {
+			templateUrl: '/partials/admin',
+			controller: 'AdminCtrl',
+			access: roles.admin
+		}).when('/404', {
+			templateUrl: '/partials/404',
+			access: roles.none
+		}).otherwise({redirectTo:'/404'});
+		
+	// Interceptor used to redirect to login page if 
+	// a 401 error is returned.
+	var interceptor = ['$location', '$q', function($location, $q) {
+		function success(response) {
+			return response;
+		}
+	
+		function error(response) {
+			if(response.status === 401) {
+				$location.path('/login');
+				return $q.reject(response);
+			} else {
+				return $q.reject(response);
+			}
+		}
+	
+		return function(promise) {
+			return promise.then(success, error);
+		};
+	}];
+	$httpProvider.responseInterceptors.push(interceptor);
+
+}])
+.run(['$rootScope', '$location', 'AuthService', 
+	function ($rootScope, $location, authService) {
+	
+    // Listener on route change event.
+	$rootScope.$on("$routeChangeStart", 
+		function (event, next, current) {
+		
+		if (!authService.isAuthorized(next.access)) {
+			if(authService.isLoggedIn()) {
+				$rootScope.error = "Access forbidden!";
+				$location.path('/');
+			} else { 
+				$rootScope.error = "You need to login before!";
+				$location.path('/login');
+			}
+		}
+	});
+}]);
+	
+</file>
+</editor>	
+
+	<p contenteditable></p></div>

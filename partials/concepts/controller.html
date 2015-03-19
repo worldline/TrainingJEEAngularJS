@@ -1,0 +1,24 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Controllers are JavaScript functions.</li>
+		<li>They are used to:</li>
+		<ul>
+			<li>Set up the initial state of a $scope object.</li>
+			<li>Add behavior to the $scope object.</li>
+		</ul>
+	</ul>
+		
+<editor editor-options="{showPreview:true,showTabs:true,height:190}">
+	<file type="javascript" name="test-ctrl.js">var TestCtrl = function($scope) {
+	$scope.welcomeMsg = "Hello World";
+	
+	$scope.onButtonClicked = function() {
+		console.log("button clicked.");
+	};
+};</file>
+    <file type="html" name="watch.html">&lt;div ng-controller="TestCtrl"&gt;
+	&lt;input type="text" ng-click="onButtonClicked()"/&gt; {{welcomeMsg}}
+&lt;/div&gt;</file>
+</editor>
+
+<p contenteditable></p></div>
