@@ -1,0 +1,29 @@
+[
+	{
+		"id": 1,
+		"firstName": "Laurent",
+		"lastName": "Wroblewski",
+		"login": "login",
+		"password": "password",
+		"role": "user",
+		"mail": "bobSponge@none.fr",
+		"address" : [ 
+			{
+				"firstName": "Laurent",
+				"lastName": "Wroblewski",
+				"address": "50, rue Jean Saisrien",
+				"postalCode": "59000",
+				"town": "LILLE",
+				"isDefault": true
+			}, {
+				"firstName": "Bob",
+				"lastName": "Sponge",
+				"address": "124 Conch Street Bikini Bottom",
+				"postalCode": "00000",
+				"town": "Pacific Ocean",
+				"isDefault": false
+			}
+		],
+		"cart": null
+	}
+]

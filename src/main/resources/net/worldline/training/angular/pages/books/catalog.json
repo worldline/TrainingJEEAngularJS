@@ -1,0 +1,239 @@
+[
+		 {
+			"id": 1,
+			"name": "AngularJS",
+			"author": "Brad Green, Shyam Seshadri",
+			"price": 15.34,
+			"description": "Description...", 
+			"category": "book", 
+			"isNew": false,
+			"comments": [
+				{
+					"rate": 5,
+					"user": "Smurf",
+					"comment": "Genious"
+				},
+                {
+                    "rate": 1,
+                    "user": "gargamel",
+                    "comment": "Bof"
+                }
+			]
+		
+		}, 
+		{
+			"id": 2,
+			"name": "Angularjs in Action",
+			"author": "Brian Ford, Lukas Ruebbelke",
+			"price": 34.51,
+			"description": "Description...", 
+			"category": "book", 
+			"isNew": true,
+			"comments": [
+
+                {
+                    "rate": 2,
+                    "user": "Robert",
+                    "comment": "well...."
+                }
+            ]
+		}, 
+		 {
+			"id": 3,
+			"name": "Instant AngularJS Starter",
+			"author": "Dan Menard",
+			"price": 16.26,
+			"description": "Description...", 
+			"category": "book", 
+			"isNew": false,
+			"comments": [
+				{
+					"rate": 2,
+					"user": "Dumby",
+					"comment": "yep"
+				},
+                {
+                    "rate": 4,
+                    "user": "dumba",
+                    "comment": "yo."
+                }
+			]
+		}, 
+		 {
+			"id": 4,
+			"name": "Javascript: The Definitive Guide",
+			"author": "David Flanagan",
+			"price": 34.44,
+			"description": "Description...", 
+			"category": "book", 
+			"isNew": false,
+			"comments": [
+				{
+					"rate": 2,
+					"user": "Dumbi",
+					"comment": "yep"
+				},
+                {
+                    "rate": 4,
+                    "user": "dumba",
+                    "comment": "yo."
+                }
+			]
+		}, 
+		 {
+			"id": 5,
+			"name": "JavaScript and HTML5 Now",
+			"author": "Kyle Simpson",
+			"price": 24.35,
+			"description": "Description...", 
+			"category": "book", 
+			"isNew": false,
+			"comments": [
+				{
+					"rate": 2,
+					"user": "yo59",
+					"comment": "bof"
+				},
+                {
+                    "rate": 4,
+                    "user": "arg",
+                    "comment": "must read"
+                }
+			]
+		}, 
+		{
+			"id": 6,
+			"name": "Tapestry in Action",
+			"author": "Lewis M Ship",
+			"price": 34.40,
+			"description": "Description...", 
+			"category": "book", 
+			"isNew": false,
+			"comments": [
+				{
+					"rate": 2,
+					"user": "Paul",
+					"comment": "hehe"
+				},
+                {
+                    "rate": 4,
+                    "user": "Ringo",
+                    "comment": "4 star."
+                }
+			]
+		}, 
+		 {
+			"id": 7,
+			"name": "High Performance Flash",
+			"author": "Elad Elrom, R.J. Owen",
+			"price": 36.04,
+			"description": "Description...", 
+			"category": "book", 
+			"isNew": true,
+			"comments": [
+				{
+					"rate": 2,
+					"user": "Regis",
+					"comment": "mouaip!!!"
+				},
+                {
+                    "rate": 4,
+                    "user": "bruno",
+                    "comment": "really?"
+                }
+			]
+		}, 
+		 {
+			"id": 8,
+			"name": "JavaScript Design Patterns",
+			"author": "Addy Osmani",
+			"price": 22.63,
+			"description": "Description...", 
+			"category": "book", 
+			"isNew": false,
+			"comments": [
+				{
+					"rate": 2,
+					"user": "X",
+					"comment": "bof"
+				},
+                {
+                    "rate": 4,
+                    "user": "Raymond",
+                    "comment": "ca dechire"
+                }
+			]
+		},
+        {
+            "id": 9,
+            "name": "Functional JavaScript",
+            "author": "Michael Fogus",
+            "price": 22.63,
+            "description": "Description...",
+            "category": "book",
+            "isNew": false,
+            "comments": [
+				{
+					"rate": 2,
+					"user": "Y",
+					"comment": "nimp"
+				},
+                {
+                    "rate": 4,
+                    "user": "x",
+                    "comment": "trop bien"
+                }
+			]
+        },
+        {
+            "id": 10,
+            "name": "ng-book",
+            "author": "Ari Lerner",
+            "price": 15.34,
+            "description": "The Complete Book on ANgularJS",
+            "category": "book",
+            "isNew": false,
+            "comments": [
+                {
+                    "rate": 4,
+                    "user": "Facon François",
+                    "comment": "very good"
+                }
+            ]
+
+        },
+        {
+            "id": 11,
+            "name": "Devenez un ninja avec AngularJS",
+            "author": "Ninja-Squad",
+            "price": 20,
+            "description": "Devenir un Ninja avec AngularJS.",
+            "category": "book",
+            "isNew": false,
+            "comments": [
+                {
+                    "rate": 4,
+                    "user": "Facon François",
+                    "comment": "En Français. Faites un geste pour Docteur Souris!"
+                }
+            ]
+
+        },
+        {
+            "id": 12,
+            "name": "Tapestry 5 - Rapid web application development in Java",
+            "author": "Igor Drobiazko",
+            "price": 20,
+            "description": "Tapestry 5 - Rapid web application development in Java is a comprehensive guide.",
+            "category": "book",
+            "isNew": false,
+            "comments": [
+                {
+                    "rate": 4,
+                    "user": "Facon François",
+                    "comment": "Must Read! "
+                }
+            ]
+
+        }
+]

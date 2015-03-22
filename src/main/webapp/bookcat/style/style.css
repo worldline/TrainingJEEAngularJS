@@ -1,0 +1,19 @@
+.lateral-form {
+	position: fixed;
+	width: 120px;
+	left: 10px;
+}
+
+.list-products {
+	display: inline-block;
+	margin-left: 150px;
+}
+
+.bloc-pagination {
+	width: 100%;
+	text-align: center;
+}
+
+.product-qty {
+	width: 50px;
+}
