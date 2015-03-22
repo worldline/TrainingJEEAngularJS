@@ -1,0 +1,3 @@
+describe("Detail Controller",function(){
+
+});
