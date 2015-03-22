@@ -1,0 +1,16 @@
+<html t:type="layoutBookCat" t:pageTitle="Demo"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" 
+      xmlns:p="tapestry:parameter"
+      xmlns:a="tapestry-library:angular">
+           	
+ 	<div id="wrapper">
+		<div id="main" role="main">
+			<div id="main-container" class="container-fluid" ng-view="">
+			</div>
+		</div>
+			
+		<aside role="complementary">
+		</aside>
+	</div>
+		
+</html>

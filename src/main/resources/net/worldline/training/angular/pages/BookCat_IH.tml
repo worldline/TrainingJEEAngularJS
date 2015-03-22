@@ -1,0 +1,44 @@
+<html t:type="layoutBookCat" t:pageTitle="Demo"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" 
+      xmlns:p="tapestry:parameter"
+      xmlns:a="tapestry-library:angular">
+
+      
+      	<!-- load without requireJS --> 
+      	<script src="${asset:context:/bower_components/angular/angular.js}"></script>
+      	<script src="${asset:context:/bower_components/angular-route/angular-route.js}"></script>
+      	<script src="${asset:context:/bower_components/angular-cookies/angular-cookies.js}"></script>
+      	<script src="${asset:context:/bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js}"></script>
+      	<script src="${asset:context:/bower_components/angular-translate/angular-translate.js}"></script>
+      	<script src="${asset:context:/bower_components/angular-resource/angular-resource.js}"></script>
+      	<script src="${asset:context:/bookcat/js/modules/sdco.js}"></script>
+      	<script src="${asset:context:/bookcat/js/app.js}"></script>
+      	<script src="${asset:context:/bookcat/js/services/auth-utils.js}"></script>
+      	<script src="${asset:context:/bookcat/js/services/CatalogService.js}"></script>
+      	<script src="${asset:context:/bookcat/js/services/NewsService.js}"></script>
+      	<script src="${asset:context:/bookcat/js/services/ProductUtils.js}"></script>
+		<script src="${asset:context:/bookcat/js/directives/mainLayout.js}"></script>
+		<script src="${asset:context:/bookcat/js/directives/productSummary.js}"></script>
+		<script src="${asset:context:/bookcat/js/controllers/BasketController.js}"></script>
+		<script src="${asset:context:/bookcat/js/controllers/CatalogController.js}"></script>
+		<script src="${asset:context:/bookcat/js/controllers/DetailController.js}"></script>
+		<script src="${asset:context:/bookcat/js/controllers/HomeController.js}"></script>
+		<script src="${asset:context:/bookcat/js/controllers/LoginController.js}"></script>
+		<script src="${asset:context:/bookcat/js/controllers/ProfileController.js}"></script>
+		<script src="${asset:context:/bookcat/js/filters/startFrom.js}"></script>
+      	
+ <div id="container">
+	
+	<div id="wrapper">
+		<div id="main" role="main">
+			<div id="main-container" class="container-fluid" ng-view="">
+			</div>
+		</div>
+			
+		<aside role="complementary">
+		</aside>
+	</div>
+	
+</div>
+		
+</html>
