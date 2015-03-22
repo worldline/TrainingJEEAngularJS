@@ -1,0 +1,49 @@
+<div>
+	<h1>{{message}}</h1>
+	<table class="k-data-table">
+		<caption>Latest news from Web & Mobile Framework Team</caption>
+		<thead>
+			<tr>
+				<th>Author</th>
+				<th>Category</th>
+				<th>Content</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<th>Author</th>
+				<th>Category</th>
+				<th>Content</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</tfoot>
+		<tbody>
+        <tr class="gradeA" ng-repeat="news in lstNews">
+            <td>{{news.author}}</td>
+            <td>{{news.category}}</td>
+            <td>{{news.content}}</td>
+            <td><button class="btn" ng-click="addLike(news)"><img src="img/like.png" /> {{news.likes}}</button></td>
+            <td><button class="btn" ng-click="deleteNews(news)"><img src="img/delete.png"/></button></td>
+        </tr>
+        <tr class="gradeA">
+            <td><input type="text" ng-model="addedNews.author" placeholder="author"/></td>
+            <td><input type="text" ng-model="addedNews.category" placeholder="category"/></td>
+            <td><input type="text" ng-model="addedNews.content" placeholder="content"/></td>
+            <td></td>
+            <td><button class="btn" ng-click="addNews(news)"><img src="img/add.png"/></button></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <section class="k-panel">
+        <h4 class="control"><a href="#">And the news of the day is...</a></h4>
+        <div class="content">
+            <p><i>{{newsOfTheDay.content}}</i> from <b>{{newsOfTheDay.author}}</b></p>
+        </div>
+    </section>
+</div>
+
+

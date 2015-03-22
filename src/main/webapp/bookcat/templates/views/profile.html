@@ -1,0 +1,55 @@
+<div>
+	<h2>Your profile</h2>
+	
+	<form id="profileForm" name="profileForm">
+		<fieldset>
+			<legend>Account Information</legend>
+			
+			<p>
+				<label for="fieldLogin">Login *:</label>
+				<input type="text" id="fieldLogin" name="fieldLogin" ng-model="user.login"/>
+			</p>
+			<p>
+				<label for="fieldPassword">Password *:</label>
+				<input type="password" id="fieldPassword" ng-model="user.password"/>
+			</p>
+			<p>
+				<label for="fieldEmail">Email Address *:</label>
+				<input type="text" id="fieldEmail" ng-model="user.mail"/>
+			</p>
+		</fieldset>
+		
+		<fieldset ng-repeat="address in user.addresses">
+			<legend>Address {{$index + 1}}</legend>
+			
+			<p>
+				<label for="fieldFirstName">First Name:</label>
+				<input type="text" id="fieldFirstName" ng-model="address.firstName"/>
+			</p>
+			<p>
+				<label for="fieldLastName">Last Name:</label>
+				<input type="text" id="fieldLastName" ng-model="address.lastName"/>
+			</p>
+			<p>
+				<label for="fieldAddress">Address:</label>
+				<input type="text" id="fieldAddress" ng-model="address.address"/>
+			</p>
+			<p>
+				<label for="fieldPostalCode">Postal Code:</label>
+				<input type="text" id="fieldPostalCode" ng-model="address.postalCode"/>
+			</p>
+			<p>
+				<label for="fieldTown">Town:</label>
+				<input type="text" id="fieldTown" ng-model="address.town"/>
+			</p>
+			<p>
+				<label for="fieldDefault">Default address:</label>
+				<input type="checkbox" id="fieldDefault" ng-model="address.isDefault"/>
+			</p>
+		</fieldset>
+		
+		<div class="k-buttons-bar">
+			<button class="btn" ng-click="updateUser()">Update profile</button>
+		</div>
+	</form>
+</div>

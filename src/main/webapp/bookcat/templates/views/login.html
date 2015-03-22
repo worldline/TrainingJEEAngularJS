@@ -1,0 +1,29 @@
+<div>
+	<div class="k-error-messages" ng-if="errorMsg">
+		<h3>{{errorMsg}}</h3>
+	</div>
+
+	<form  class="k-login">
+		<fieldset>
+			<legend>Sign in</legend>
+			<p>
+				<label for="login">User identifier</label>
+				<input id="login" type="text" />
+			</p>
+			<p>
+				<label for="password">Password</label>
+				<input id="password" type="password"  />
+				<span class="lost-password">
+					<a href="#">Forgot your password?</a>
+				</span>
+			</p>
+			<p>
+				<button type="submit" class="btn">Login</button>
+			</p>
+		</fieldset>
+		<p class="to-register">
+			<strong>Not registered yet ?</strong> &raquo; 
+			<a href="#">Register now</a>
+		</p>
+	</form>
+</div>

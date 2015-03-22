@@ -1,0 +1,66 @@
+<div>
+    <div class="lateral-form">
+        Results per page: <br />
+        <!-- TODO: Number of products displayed per page. -->
+        <input type="number" id="nbFilter" name="nbFilter" /> Filter by name:
+        <br />
+        <!-- TODO -->
+        <input type="text" id="nameFilter" name="nameFilter" /> <br /> Order
+        by: <br />
+        <!-- TODO -->
+        <select name="bookOrderBy" id="bookOrderBy">
+            <option>name</option>
+            <option>price</option>
+            <option>rating</option>
+        </select>
+        <!-- TODO -->
+        <br /> Reverse filter: <input type="checkbox" /> <br />
+    </div>
+
+    <div class="k-catalog list-products">
+        <!-- hproduct/ -->
+
+        <!-- TODO: show each article. -->
+        <article class="k-product hproduct">
+            <div class="photo-data">
+                <p>
+                    <a href="#" title="See Product sheet"> <!-- TODO: article photo -->
+                        <img class="photo" alt="Title of product" />
+                    </a>
+                </p>
+            </div>
+
+            <!-- Show only if the article is new. -->
+            <p class="extra new">new</p>
+
+            <h3 class="fn name">
+                <!-- TODO: link to /book/id_product -->
+                <a href="#" title="See Product sheet">Product name</a>
+            </h3>
+
+            <!-- TODO: handle class on p element to show correct star rating css class. -->
+            <p>
+                <a href="#comments">Comments number</a>
+            </p>
+
+            <div class="price-data">
+                <p class="all-prices">
+                    <strong class="price new">Price</strong>
+                </p>
+            </div>
+            <div class="buyZone">
+                <p class="buy">
+                    <!-- TODO: Add to cart function. -->
+                    <a href="basket">Add to basket</a>
+                </p>
+            </div>
+        </article>
+        <!-- /hproducts -->
+    </div>
+
+    <div class="bloc-pagination">
+        <!-- TODO: use pagination directive from angular-ui -->
+    </div>
+</div>
+
+

@@ -1,0 +1,43 @@
+<div id="container">
+
+	<header role="banner">
+		<h1>SDCO Book Store <small>{{ '_Slogan_' | translate}}</small></h1>
+		
+		<p ng-if="user != null" class="k-basket-sum">
+			<a href="/basket" title="See basket details"><strong>{{nbItems}}</strong> {{ '_Basket_Items_' | translate}}</a>
+		</p>
+		<p ng-if="user != null" class="k-login-data">
+			Welcome, 
+			<span id="user-name">
+				<a href="#/profile">{{user.firstName}} {{user.lastName}}</a>
+			</span> 
+			[<strong><a href="#" ng-click="logout()">{{ '_Logout_' | translate}}</a></strong>]
+		</p>
+		<p ng-if="user == null" id="loginLink">
+			<a href="#/login">{{ '_Sign_In_' | translate}}</a>
+		</p>
+	</header>
+	
+	<nav>
+		<h2 class="k-skip"><a href="#wrapper">Main navigation (Skip it)</a></h2>
+		<ul class="k-navbar">
+			<li class="home"><a href="#/">Home</a></li>
+			<li><a href="#/books">Books</a></li>
+		</ul>
+	</nav>
+	
+	<div id="wrapper">
+		<div id="main" role="main">
+			<div id="main-container" class="container-fluid" ng-view>
+			</div>
+		</div>
+			
+		<aside role="complementary">
+		</aside>
+	</div>
+	
+	<footer role="contentinfo">
+		<p class="k-copyright">&copy; SDCO</p>
+	</footer>
+	
+</div>

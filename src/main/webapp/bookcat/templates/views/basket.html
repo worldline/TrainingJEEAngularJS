@@ -1,0 +1,28 @@
+<div class="k-basket k-panel">
+	<h3 class="control ui-state-active">
+		Basket ({{nbItems}})
+	</h3>
+	<div class="content">
+		<dl class="basket-item new-item" ng-repeat="item in items">
+			<dt>
+				<a href="#" title="Go to the product sheet"> 
+					<img ng-src="img/catalog/{{item.id}}.jpg" alt="Article" width="100" />
+				</a>
+			</dt>
+			<dd class="name">
+				<a ng-href="book/{{item.id}}">{{item.name}}</a>
+			</dd>
+			<dd class="k-quantity">
+				Quantity: 
+				<input type="number" min="0" ng-model="item.qty" class="product-qty" />
+			</dd>
+			<dd class="price">{{item.qty * item.price | currency}}</dd>
+		</dl>
+		<p ng-if="nbItems > 0" class="basket-total">
+			TOTAL: <strong>{{getTotal() | currency}}</strong>
+		</p>
+		<ul ng-if="nbItems > 0" class="k-buttons-bar">
+			<li><a href="#" class="k-button">Checkout</a></li>
+		</ul>
+	</div>
+</div>
