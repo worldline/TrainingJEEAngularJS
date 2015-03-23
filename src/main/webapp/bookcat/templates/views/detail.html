@@ -5,27 +5,26 @@
                 TODO: 
                 load the image in data/img/ based on the product id... 
             -->
-            <img class="photo" />
+            <img class="photo" ng-src="{{getImage(product.id)}}" />
         </div>
         <div class="product-data">
-            <h3 class="fn name">TODO</h3>
+            <h3 class="fn name">{{product.name}}</h3>
             <h4 class="category">
-                <a href="#">TODO</a>
+                <a href="#">{{product.category}}</a>
             </h4>
-
             <!-- 
                 TODO: 
                 return correct CSS class on <p>: rating and zero/one/two/three/four/five 
             -->
-            <p>
-                <a href="#comments">TODO comment(s)</a>
+            <p ng-class="getCSSRating(product.comments)">
+                <a href="#comments">{{product.comments.length}} comment(s)</a>
             </p>
-            <p class="description">TODO</p>
-            Quantity: <input type="number" class="product-qty" />
+            <p class="description">{{product.description}}</p>
+            Quantity: <input type="number" class="product-qty" min="1" ng-model="quantity" />
             <br />
             <div class="price-data">
                 <strong class="price sale">
-                    TODO
+                    {{product.price * quantity |currency}}
                 </strong>
             </div>
             <div class="buyZone">
