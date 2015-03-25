@@ -25,15 +25,15 @@
             <td>{{news.author}}</td>
             <td>{{news.category}}</td>
             <td>{{news.content}}</td>
-            <td><button class="btn" ng-click="addLike(news)"><img src="img/like.png" /> {{news.likes}}</button></td>
-            <td><button class="btn" ng-click="deleteNews(news)"><img src="img/delete.png"/></button></td>
+            <td><button class="btn" ng-click="addLike(news)"><img src="/bookcat/img/like.png" /> {{news.likes}}</button></td>
+            <td><button ng-click="deleteNews(news)"><img src="/bookcat/img/delete.png"/></button></td>
         </tr>
         <tr class="gradeA">
             <td><input type="text" ng-model="addedNews.author" placeholder="author"/></td>
             <td><input type="text" ng-model="addedNews.category" placeholder="category"/></td>
             <td><input type="text" ng-model="addedNews.content" placeholder="content"/></td>
             <td></td>
-            <td><button class="btn" ng-click="addNews(news)"><img src="img/add.png"/></button></td>
+            <td><button class="btn" ng-click="addNews()"><img src="/bookcat/img/add.png"/></button></td>
         </tr>
         </tbody>
     </table>
