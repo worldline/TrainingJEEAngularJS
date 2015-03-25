@@ -95,11 +95,12 @@ public class UserService
         Subject subject;
         try {
             subject = securityService.getSubject();
+            if (subject.isAuthenticated()) subject.logout();
             if (!subject.isAuthenticated()) {
                 UsernamePasswordToken token = new UsernamePasswordToken(username, password);
                 subject.login(token);
                 token.clear();
-                String userPassword= username + ":" + password;
+                String userPassword= username + ":" + "honeypot";
                 String basicAuth = new String(Base64.encodeBytes(userPassword.getBytes()));
                 Token cltToken = new Token();
                 cltToken.setAccess_token("Basic "+basicAuth);
@@ -108,15 +109,8 @@ public class UserService
                 cltToken.setScope("read write");
                 rb = Response.ok(cltToken);
                 return rb.build();
-
-            } else {
-                LOG.debug("User [" + subject.getPrincipal() + "] already authenticated.");
-                if(subject.getPrincipal().toString().equals(username))
-                {
-                    rb = Response.ok();
-                    return rb.build();
-                }
-            }
+            } 
+            
         } catch (Exception e) {
             LOG.debug("User failed to log.");
         }
