@@ -98,6 +98,17 @@
         }
     };
 
+    angular.module('sdcoServices', [])
+        .value('User', {
+            createUser: function (pId, pFirst, pLast, pLogin, pPass, pMail, pCartItems, pRole, pAddresses) {
+                return new User(pId, pFirst, pLast, pLogin, pPass, pMail, pCartItems, pRole, pAddresses);
+            },
+            createCart: function(pItems){
+                return new Cart(pItems);
+            }
+    });
+
+
 
     /** Service which handle all user logic. */
     var UserService = function ($log, $cookies, $cookieStore, User, isDebugMode) {
@@ -133,5 +144,18 @@
 
     };
 
+    /** Registers our service in a new sub module. */
+    angular.module('sdcoServices').provider('UserService',function() {
+
+        var isDebugMode = false;
+
+        this.setDebugMode = function (pIsDebug) {
+            isDebugMode = pIsDebug;
+        };
+
+        this.$get = [ '$log', '$cookies', '$cookieStore', 'User', function ($log, $cookies, $cookieStore, User) {
+            return new UserService( $log, $cookies, $cookieStore, User, isDebugMode);
+        }];
+    });
 
 })();
