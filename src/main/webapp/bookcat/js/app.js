@@ -63,8 +63,7 @@ var baseUrl;
                     "_Sign_In_": "connexion"
                 });
                 
-                $translateProvider.preferredLanguage('fr');
-                
+                                
                 httpHeaders = $httpProvider.defaults.headers;
                 
                 // We need a interceptor to catch error message 
@@ -99,7 +98,6 @@ var baseUrl;
         ]).run(['$rootScope', '$location', '$http', 'AuthenticationSharedService',  'Session', 'USER_ROLES', 
                 function run( $rootScope, $location, $http, AuthenticationSharedService,  Session, USER_ROLES){
        
-       AuthenticationSharedService.valid(); 	
         
        $rootScope.$on('$routeChangeStart', function (event, next) {
             $rootScope.isAuthorized = AuthenticationSharedService.isAuthorized;
