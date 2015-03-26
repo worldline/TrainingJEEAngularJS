@@ -3,16 +3,16 @@
 		<h3>{{errorMsg}}</h3>
 	</div>
 
-	<form  class="k-login">
+	<form  class="k-login" ng-submit="logUser()">
 		<fieldset>
 			<legend>Sign in</legend>
 			<p>
 				<label for="login">User identifier</label>
-				<input id="login" type="text" />
+				<input id="login" type="text" ng-model="login"/>
 			</p>
 			<p>
 				<label for="password">Password</label>
-				<input id="password" type="password"  />
+				<input id="password" type="password" ng-model="password" />
 				<span class="lost-password">
 					<a href="#">Forgot your password?</a>
 				</span>
