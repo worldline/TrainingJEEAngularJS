@@ -51,17 +51,19 @@ var baseUrl;
                 });
 
                 $translateProvider.translations('en', {
-                    "_Slogan": "All the books you need, at the highest price!",
+                    "_Slogan_": "All the books you need, at the highest price!",
                     "_Basket_Items_": "item(s) in your basket",
                     "_Logout_": "Logout",
-                    "_Sign_In_": "Sign-in"
+                    "_Sign_In_": "Login"
                 });
                 $translateProvider.translations('fr', {
-                    "_Slogan": "All the books you need, at the highest price!",
-                    "_Basket_Items_": "item(s) in your basket",
-                    "_Logout_": "Logout",
-                    "_Sign_In_": "Sign-in"
+                    "_Slogan_": "Tous les livres dont vous avez besoin",
+                    "_Basket_Items_": "Livre(s) dans votre panier",
+                    "_Logout_": "déconnexion",
+                    "_Sign_In_": "connexion"
                 });
+                
+                $translateProvider.preferredLanguage('fr');
                 
                 httpHeaders = $httpProvider.defaults.headers;
                 
@@ -94,8 +96,10 @@ var baseUrl;
                     }
             }});
             }
-        ]).run(['$rootScope', '$location', '$http', 'AuthenticationSharedService',  'Session', 'USER_ROLES',
+        ]).run(['$rootScope', '$location', '$http', 'AuthenticationSharedService',  'Session', 'USER_ROLES', 
                 function run( $rootScope, $location, $http, AuthenticationSharedService,  Session, USER_ROLES){
+       
+       AuthenticationSharedService.valid(); 	
         
        $rootScope.$on('$routeChangeStart', function (event, next) {
             $rootScope.isAuthorized = AuthenticationSharedService.isAuthorized;
