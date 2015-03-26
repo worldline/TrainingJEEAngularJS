@@ -16,7 +16,7 @@
 		<p ng-if="account != null" class="k-login-data">
 			Welcome, 
 			<span id="user-name">
-				<a href="#/profile">{{account.firstName}} {{account.lastName}}</a>
+				<a href="#/profile">{{account.login}} </a>
 			</span> 
 			[<strong><a href="#" ng-click="logout()">{{ '_Logout_' | translate}}</a></strong>]
 		</p>
