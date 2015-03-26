@@ -107,6 +107,9 @@ var phonecat = angular.module('phonecat', ['ngResource','ui.router','pascalprech
     }])
 .run(['$rootScope', '$location', '$http','$state', 'AuthenticationSharedService',  'Session', 'USER_ROLES',
         function($rootScope, $location, $http,$state, AuthenticationSharedService, Session, USER_ROLES) {
+	
+			AuthenticationSharedService.valid();
+	
             $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
                 $rootScope.isAuthorized = AuthenticationSharedService.isAuthorized;
                 $rootScope.userRoles = USER_ROLES;
