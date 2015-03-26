@@ -1,6 +1,9 @@
 describe("Detail Controller",function(){
 
     var scope, ctrl, $httpBackend, catalogService,
+    	validate = function(){
+        return { "message" : "not Authenticated"  }
+    	},
         book1 =function(){
             return {
                 "id": 1,
@@ -31,6 +34,9 @@ describe("Detail Controller",function(){
         scope = $rootScope.$new();
         $routeParams.id = 1;
 
+        $httpBackend.when('GET', 'api/app/user/validate')
+        .respond(book1());
+        
         $httpBackend.when('GET', 'api/app/catalog/1')
             .respond(book1());
 
@@ -45,10 +51,10 @@ describe("Detail Controller",function(){
 
     it('getImage() should return the correct url', function() {
         // toMatch: compare a string/regular expression.
-        expect(scope.getImage(1)).toEqual('bookcat/img/catalog/1.jpg');
+        expect(scope.getImage(1)).toEqual('/bookcat/img/catalog/1.jpg');
     });
 
     it('getCSSRating() should return the correct css classes', function() {
-        expect(scope.getCSSRating(book1().comments)).toEqual(['rating','two']);
+        expect(scope.getCSSRating(book1().comments)).toEqual(['rating','three']);
     });
 });
