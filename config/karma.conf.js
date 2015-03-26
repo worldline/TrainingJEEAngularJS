@@ -2,10 +2,17 @@
 // Generated on Fri Feb 07 2014 10:58:31 GMT+0100 (Paris, Madrid)
 
 module.exports = function (config) {
+
+    var basePath= '../',
+        testsPath= 'test/unit/',
+        extLibsPath= 'src/main/webapp/bower_components',
+        appPath= 'src/main/webapp/bookcat';
+
+
     config.set({
 
         // base path, that will be used to resolve files and exclude
-        basePath: '../src/main/webapp/bookcat',
+        basePath: basePath,
 
 
         // Used to change your templates/views into js testable files.
@@ -16,25 +23,16 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            '../bower_components/angular/angular.js',
-            '../bower_components/**/*.js',
-            'js/**/*.js',
-            '../../../../test/unit/**/*Spec.js',
-            'templates/partials/*.html'
-        ],
-
-
-        // list of files to exclude
-        exclude: [
-            '../bower_components/**/*Spec.js',
-            '../bower_components/**/*.conf.js',
-            '../bower_components/**/*file.js',
-            '../bower_components/**/index.js',
-            '../bower_components/**/*.min.js',
-            '../bower_components/angular-translate-loader-*/**/*.*',
-            '../bower_components/angular-translate-storage-*/**/*.*'
-            
-        ],
+                extLibsPath + '/angular/angular.js',
+                extLibsPath + '/angular-route/angular-route.js',
+                extLibsPath + '/angular-cookies/angular-cookies.js',
+                extLibsPath + '/angular-translate/angular-translate.js',
+                extLibsPath + '/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js',
+                extLibsPath + '/angular-resource/angular-resource.js',
+                extLibsPath + '/angular-mocks/angular-mocks.js',
+                appPath + '/js/**/*.js',
+                testsPath + '/**/*Spec.js'
+            ],
 
         // generate js files from html templates
         preprocessors: {
