@@ -3,12 +3,9 @@
 		<li>We will now handle the login functionality in our <i class="text-red">ecommerce</i> application. Files to
 			edit are the template <i class="text-red">login.html</i> and its controller 
 			<i class="text-red">LoginController.js</i>.</li>
-		<li>Inject the <i class="text-red">$http</i> service and use the route
-			<i class="text-red">/api/login (post : {login:'login',password:'password'})</i>.</li>
-		<li>If the <i class="text-red">$http</i> service returns an error when trying to load the json file,
-			use the <i class="text-red">$log</i> service to log an error in the console.</li>
-		<li>Use the service <i class="text-red">$location</i> to redirect the user to the main page if needed</li>
-		<li>When the user is successfully logged, use the <i class="text-red">$cookieStore</i> service to save the 
-			user instance</li>
+		<li>Inject the <i class="text-red">AuthenticationSharedService</i> service and use the login 
+			<i class="text-red">method with the rights parameters</i>.</li>
+		<li>Use the service <i class="text-red">$location</i> to redirect the user to the home page when login process successed</li>
+		<li>change the<i class="text-red">profileController</i> to display the logout link</li>
 	</ol>
 <p contenteditable></p></div>
