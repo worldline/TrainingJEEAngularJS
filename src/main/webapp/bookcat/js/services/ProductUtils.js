@@ -44,6 +44,14 @@
             }
             return css;
         };
+        
+        this.getImage = function (id) {
+            if (!id) {
+                return "";
+            } else {
+                return "/bookcat/img/catalog/" + id + ".jpg";
+            }
+        };
     };
 
     angular.module('app')
