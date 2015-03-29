@@ -1,12 +1,12 @@
 <div>
     <div class="lateral-form">
-        Results per page: <br />
+        Results per page: <br/>
         <!-- TODO: Number of products displayed per page. -->
-        <input type="number" id="nbFilter" name="nbFilter" /> Filter by name:
-        <br />
+        <input type="number" id="nbFilter" name="nbFilter"/> Filter by name:
+        <br/>
         <!-- TODO -->
-        <input type="text" id="nameFilter" name="nameFilter" /> <br /> Order
-        by: <br />
+        <input type="text" id="nameFilter" name="nameFilter"/> <br/> Order
+        by: <br/>
         <!-- TODO -->
         <select name="bookOrderBy" id="bookOrderBy">
             <option>name</option>
@@ -14,44 +14,45 @@
             <option>rating</option>
         </select>
         <!-- TODO -->
-        <br /> Reverse filter: <input type="checkbox" /> <br />
+        <br/> Reverse filter: <input type="checkbox"/> <br/>
     </div>
 
     <div class="k-catalog list-products">
         <!-- hproduct/ -->
 
-        <!-- TODO: show each article. -->
-        <article class="k-product hproduct">
+        <article class="k-product hproduct" ng-repeat="product in products">
             <div class="photo-data">
                 <p>
-                    <a href="#" title="See Product sheet"> <!-- TODO: article photo -->
-                        <img class="photo" alt="Title of product" />
+                    <a ng-href="#/book/{{product.id}}">
+                        <img class="photo" ng-src="{{getImage(product.id)}}" />
                     </a>
                 </p>
             </div>
 
-            <!-- Show only if the article is new. -->
-            <p class="extra new">new</p>
+            <p class="extra new" ng-if="product.isNew">new</p>
 
             <h3 class="fn name">
-                <!-- TODO: link to /book/id_product -->
-                <a href="#" title="See Product sheet">Product name</a>
+                <a ng-href="#/book/{{product.id}}" title="See Product sheet">{{product.name}}</a>
             </h3>
 
-            <!-- TODO: handle class on p element to show correct star rating css class. -->
-            <p>
-                <a href="#comments">Comments number</a>
+            <p ng-class="getRatingClass(product)">
+
+        <span ng-show="product.comments">
+            <a href="#comments">{{product.comments.length}} comment(s)</a>
+        </span>
+        <span ng-hide="product.comments">
+            No comment
+        </span>
             </p>
 
             <div class="price-data">
                 <p class="all-prices">
-                    <strong class="price new">Price</strong>
+                    <strong class="price new">{{product.price | currency}}</strong>
                 </p>
             </div>
             <div class="buyZone">
                 <p class="buy">
-                    <!-- TODO: Add to cart function. -->
-                    <a href="basket">Add to basket</a>
+                    <a href="#/basket" ng-click="addToCart(product)">Add to basket</a>
                 </p>
             </div>
         </article>
@@ -59,8 +60,6 @@
     </div>
 
     <div class="bloc-pagination">
-        <!-- TODO: use pagination directive from angular-ui -->
+        <!--todo number of results per page-->
     </div>
 </div>
-
-
