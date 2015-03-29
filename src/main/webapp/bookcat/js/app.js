@@ -3,7 +3,7 @@ var baseUrl;
 (function () {
     "use strict";
 
-    var app = angular.module('app', [ 'ngCookies', 'ngResource', 'ngRoute', 'ui.bootstrap', 'pascalprecht.translate']);
+    var app = angular.module('app', [ 'ngCookies', 'ngResource', 'ngRoute', 'ui.bootstrap', 'pascalprecht.translate','sdcoServices']);
 
     /** Services configuration */
     app.config(
