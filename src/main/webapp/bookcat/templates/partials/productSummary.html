@@ -1,3 +1,36 @@
 <article class="k-product hproduct">
-   
+    <div class="photo-data">
+        <p>
+            <a ng-href="#/book/{{product.id}}">
+                <img class="photo" ng-src="/bookcat/img/catalog/{{product.id}}.jpg" />
+            </a>
+        </p>
+    </div>
+
+    <p class="extra new" ng-if="product.isNew">new</p>
+
+    <h3 class="fn name">
+        <a ng-href="#/book/{{product.id}}" title="See Product sheet">{{product.name}}</a>
+    </h3>
+
+    <p ng-class="getRatingClass(product.comments)">
+		
+		<span ng-show="product.comments">
+			<a href="#comments">{{product.comments.length}} comment(s)</a>
+		</span>
+		<span ng-hide="product.comments">
+			No comment
+		</span>
+    </p>
+
+    <div class="price-data">
+        <p class="all-prices">
+            <strong class="price new">{{product.price | currency}}</strong>
+        </p>
+    </div>
+    <div class="buyZone">
+        <p class="buy">
+            <a ng-click="addToCart(product)">Add to basket</a>
+        </p>
+    </div>
 </article>
