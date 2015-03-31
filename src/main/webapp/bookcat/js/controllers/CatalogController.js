@@ -10,5 +10,7 @@
                 $scope.products = result;
             });
                  
+            $scope.nbResults= 5;
+            
         }]);
 })();
