@@ -2,28 +2,30 @@
     <div class="lateral-form">
         Results per page: <br/>
         <!-- TODO: Number of products displayed per page. -->
-        <input type="number" id="nbFilter" name="nbFilter"/> Filter by name:
+        <input type="number" id="nbFilter" name="nbFilter" ng-model="nbResults"/> Filter by name:
         <br/>
         <!-- TODO -->
-        <input type="text" id="nameFilter" name="nameFilter"/> <br/> Order
+        <input type="text" id="nameFilter" name="nameFilter" ng-model="nameFilter.name"/> <br/> Order
         by: <br/>
         <!-- TODO -->
-        <select name="bookOrderBy" id="bookOrderBy">
+        <select name="bookOrderBy" id="bookOrderBy" ng-model="bookOrderBy">
             <option>name</option>
             <option>price</option>
             <option>rating</option>
         </select>
         <!-- TODO -->
-        <br/> Reverse filter: <input type="checkbox"/> <br/>
+        <br/> Reverse filter: <input type="checkbox" ng-model="filterReverse"/> <br/>
     </div>
 
     <div class="k-catalog list-products">
         <!-- hproduct/ -->
-		<product-summary product="product"  ng-repeat="product in products"/>
+        <product-summary product="product" ng-repeat="product in products | filter:nameFilter | orderBy:bookOrderBy:filterReverse | startFrom:(currentPage - 1)* nbResults | limitTo:nbResults"/>
         <!-- /hproducts -->
     </div>
 
     <div class="bloc-pagination">
-        <!--todo number of results per page-->
+    	 
+        <pagination total-items="products.length" ng-model="currentPage" items-per-page="nbResults" class="pagination-sm" boundary-links="true" ></pagination>
+        
     </div>
 </div>
