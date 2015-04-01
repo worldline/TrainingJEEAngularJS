@@ -47,3 +47,8 @@ run protractor tests
 ```bash
 grunt test:e2e
 ```
+
+## Online exercices
+Here are the solutions for the different online exercice : 
+
+* [Slide 24 - Two-Way Data Binding Magic](https://gist.github.com/got5/d699b5a4362d057fe995)
