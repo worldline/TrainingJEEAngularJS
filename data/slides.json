@@ -579,10 +579,6 @@
         "content": "other/testing_directives"
     },
     {
-        "title": "Testing directives",
-        "content": "other/testing_directives_2"
-    },
-    {
         "title": "Practical work P8",
         "content": "tps/directives_create_tp"
     },
@@ -628,14 +624,6 @@
     {
         "title": "Using form validation methods",
         "content": "other/form_validation_ex"
-    },
-    {
-        "title": "Services decoration",
-        "content": "other/services_decoration"
-    },
-    {
-        "title": "Directives decoration",
-        "content": "other/directives_decoration"
     },
     {
         "title": "Security concerns",
