@@ -55,3 +55,5 @@ Here are the solutions for the different online exercice :
 * [Slide 29 - Expressions in AngularJS] (https://gist.github.com/got5/a8fade483f338178dd7b)
 * [Slide 39 - Use of $watch by Angular](https://gist.github.com/got5/a19fe6e66c3c9c927fad)
 * [Slide 46 - To conclude about controllers..](https://gist.github.com/got5/65a58721d7ac7a2b8db3)
+* [Slide 67 - Main Angular services: $http](https://gist.github.com/got5/e5eb8798533505f87329)
+
