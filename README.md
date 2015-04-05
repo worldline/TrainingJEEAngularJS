@@ -54,3 +54,4 @@ Here are the solutions for the different online exercice :
 * [Slide 24 - Two-Way Data Binding Magic](https://gist.github.com/got5/d699b5a4362d057fe995)
 * [Slide 29 - Expressions in AngularJS] (https://gist.github.com/got5/a8fade483f338178dd7b)
 * [Slide 39 - Use of $watch by Angular](https://gist.github.com/got5/a19fe6e66c3c9c927fad)
+* [Slide 46 - To conclude about controllers..](https://gist.github.com/got5/65a58721d7ac7a2b8db3)
