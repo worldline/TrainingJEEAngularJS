@@ -56,4 +56,4 @@ Here are the solutions for the different online exercice :
 * [Slide 39 - Use of $watch by Angular](https://gist.github.com/got5/a19fe6e66c3c9c927fad)
 * [Slide 46 - To conclude about controllers..](https://gist.github.com/got5/65a58721d7ac7a2b8db3)
 * [Slide 67 - Main Angular services: $http](https://gist.github.com/got5/e5eb8798533505f87329)
-
+* [Slide 114 - Native Angular directives](https://gist.github.com/got5/ad8e4ccf9a5022509a7a)
