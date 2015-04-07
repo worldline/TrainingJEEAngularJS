@@ -57,3 +57,4 @@ Here are the solutions for the different online exercice :
 * [Slide 46 - To conclude about controllers..](https://gist.github.com/got5/65a58721d7ac7a2b8db3)
 * [Slide 67 - Main Angular services: $http](https://gist.github.com/got5/e5eb8798533505f87329)
 * [Slide 114 - Native Angular directives](https://gist.github.com/got5/ad8e4ccf9a5022509a7a)
+* [Slide 115 - Using the link function](https://gist.github.com/got5/19d7a41a8b81c1200bdf)
