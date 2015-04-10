@@ -60,3 +60,4 @@ Here are the solutions for the different online exercice :
 * [Slide 115 - Using the link function](https://gist.github.com/got5/19d7a41a8b81c1200bdf)
 * [Slide 125 - Using the scope property](https://gist.github.com/got5/378724ebc7fbf37628a0)
 * [Slide 130 - Creating new directives](https://gist.github.com/got5/c93cecb0ed1f71a7ad67)
+* [Slide 137 - Let's use Angular Filters!](https://gist.github.com/got5/136742dc4170e184476b)
