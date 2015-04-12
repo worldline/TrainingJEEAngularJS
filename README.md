@@ -62,3 +62,7 @@ Here are the solutions for the different online exercice :
 * [Slide 130 - Creating new directives](https://gist.github.com/got5/c93cecb0ed1f71a7ad67)
 * [Slide 137 - Let's use Angular Filters!](https://gist.github.com/got5/136742dc4170e184476b)
 * [Slide 144 - Using form validation methods](https://gist.github.com/got5/fabd51ee4221ebfc347a)
+
+## links
+
+* [Immediately-invoked Function Expressions](http://addyosmani.com/resources/essentialjsdesignpatterns/book/#detailnamespacing)
