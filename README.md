@@ -66,3 +66,4 @@ Here are the solutions for the different online exercice :
 ## links
 
 * [Immediately-invoked Function Expressions](http://addyosmani.com/resources/essentialjsdesignpatterns/book/#detailnamespacing)
+* [support for script-async for IE>10](http://caniuse.com/#feat=script-async)
