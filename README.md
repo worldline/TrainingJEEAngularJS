@@ -68,3 +68,4 @@ Here are the solutions for the different online exercice :
 * [Immediately-invoked Function Expressions](http://addyosmani.com/resources/essentialjsdesignpatterns/book/#detailnamespacing)
 * [support for script-async for IE>10](http://caniuse.com/#feat=script-async)
 * [difference between angular-route and angular-ui-router](http://www.meanstack.co/difference-between-angular-route-and-angular-ui-router/)
+* [Debugging AngularJS Apps from the Console](http://ionicframework.com/blog/angularjs-console/)
